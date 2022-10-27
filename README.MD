@@ -1,1 +1,1 @@
-# 1000 python functions base on data typs methods
+# 1000 python functions
