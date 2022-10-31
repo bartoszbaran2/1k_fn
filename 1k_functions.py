@@ -42,6 +42,61 @@ def get_global_with_own_args(func_name, **kwargs):
     return globals()[func_name](**kwargs)
 
 
+def get_hash_value(item):
+    return hash(item)
+
+
+def get_help(item):
+    return help(item)
+
+
+def get_id(item):
+    return id(item)
+
+
+def get_user_name():
+    username = input('Enter your name: ')
+    return username
+
+
+def add_two_lists(numbers1, numbers2):
+    result = list(map(lambda x, y: x + y, numbers1, numbers2))
+    return result
+
+
+def get_max_from_list(numbers):
+    return max(numbers)
+
+
+def get_min_from_list(numbers):
+    return min(numbers)
+
+
+def read_text_file(path, mode):
+    result = open(path, mode)
+    return result.read()
+
+
+def find_unicode(char):
+    return ord(char)
+
+
+def power_numbers(number1, number2, module):
+    return pow(number1, number2, module)
+
+
+def reverse_iterable(iterable):
+    return list(reversed(iterable))
+
+
+def round_float(number, digits):
+    return round(number, digits)
+
+
+def get_your_initials(name):
+    return name[slice(0, 1)]*2
+
+
 # built-in
 print(get_absolute_value(-5.4))
 print(get_binary(-55))
@@ -52,3 +107,16 @@ print(calculate_expression('3 * 12'))
 print(filter_adult_persons({'tomek': 16, 'ania': 24, 'jarek': 36, 'marek': 4}))
 print(say_hello('adam'))
 print(get_global_with_own_args('say_hello', name='janusz', title='mr'))
+print(get_hash_value('ala ma kota'))
+# print(get_help('print'))
+print(get_id(5))
+# print(get_user_name())
+print(add_two_lists([1, 2, 3], [10, 10, 10]))
+print(get_max_from_list([10, 15, 20]))
+print(get_min_from_list([10, 15, 20]))
+print(read_text_file('text.txt', 'r'))
+print(find_unicode('B'))
+print(power_numbers(7, 2, 5))
+print(reverse_iterable((2, 3, 4, 5)))
+print(round_float(5.6666, 3))
+print(get_your_initials('bartek'))
