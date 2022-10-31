@@ -1,4 +1,22 @@
+def get_date(year, month, day):
+    date = str(day) + '/' + str(month) + '/' + str(year)
+    return date
+
+
+def calculate_average(values):
+    return None if len(values) == 0 else sum(values) / len(values)
+
+
+def calc_seconds_in_your_age(age):
+    return 60 * 60 * 24 * 7 * 52 * age
+
+
+def get_even_number_from_list(list_of_numbers):
+    result = []
+
+
 # built-in
+
 
 def get_absolute_value(item):
     if isinstance(item, (list, tuple)):
@@ -97,6 +115,14 @@ def get_your_initials(name):
     return name[slice(0, 1)]*2
 
 
+def get_unique_list(list_of_numbers):
+    return set(list_of_numbers)
+
+
+print(get_date(1992, 20, 3))
+print(calculate_average([20, 40, 60]))
+print(calc_seconds_in_your_age(30))
+
 # built-in
 print(get_absolute_value(-5.4))
 print(get_binary(-55))
@@ -120,3 +146,4 @@ print(power_numbers(7, 2, 5))
 print(reverse_iterable((2, 3, 4, 5)))
 print(round_float(5.6666, 3))
 print(get_your_initials('bartek'))
+print(get_unique_list([2, 3, 4, 4, 4, 5]))
