@@ -3,6 +3,10 @@ import random
 from datetime import datetime
 
 
+def print_truth():
+    print('mam już dość!')
+
+
 def coin_toss():
     return random.choice(["Heads", "Tails"])
 
@@ -29,7 +33,7 @@ def fahr_to_kelvin(temp_f):
     return temp_k
 
 
-def get_BMI(weight, height):
+def get_bmi(weight, height):
     return weight / height ** 2
 
 
@@ -58,14 +62,14 @@ def area_cylinder(radius, height):
     return 2*circle_area + height_area
 
 
-def volume_cylinder(radius,height):
+def volume_cylinder(radius, height):
     area = area_circle(radius)
     return area * height
 
 
 def find_area(r):
-    Pi = 3.14
-    return Pi * (r*r)
+    pi = 3.14
+    return pi * (r*r)
 
 
 def area_of_triangle(a, b, c):
@@ -101,12 +105,12 @@ def add_numbers(*num):
 
 
 def calculate_si_amount(principal, rate, time):
-    interest =  (principal*rate*time)/100
+    interest = (principal*rate*time)/100
     return principal+interest
 
 
 def generate_random_number(start_value, stop_value):
-    return random.randint(0, 100)
+    return random.randint(start_value, stop_value)
 
 
 def volume_sphere(r):
@@ -263,7 +267,7 @@ def in_both(wd1, wd2):
 def odd_or_even(a):
     if a > 0:
         return "Positive"
-    elif a <0:
+    elif a < 0:
         return "Negative"
     else:
         return "Zero"
@@ -331,6 +335,44 @@ def fibonacci(n):
 def cuboid_surface_area(a, b, c):
     result = 2 * a + 2 * b + 2 * c
     return result
+
+
+def make_upper(word):
+    return word.upper()
+
+
+def make_lower(word):
+    return word.lower()
+
+
+def reverse_word(word):
+    return word[::-1]
+
+
+def count_letters(letter, sentence):
+    counter = 0
+
+    for letter_ in sentence:
+        if letter in letter_:
+            counter += 1
+
+    return counter
+
+
+def calculate_speed(distance, time):
+    return distance / time
+
+
+def calculate_salary(amount, working_hours):
+    return amount * working_hours
+
+
+def meters_to_feet(meters):
+    return meters * 3.28084
+
+
+def km_to_miles(km):
+    return km * 0.621371192
 
 
 # built-in
@@ -435,13 +477,14 @@ def get_unique_list(list_of_numbers):
     return set(list_of_numbers)
 
 
+print_truth()
 print(coin_toss())
 print(is_even_odd(5))
 print(celsius_to_fahrenheit(20))
 print(fahrenheit_to_celsius(67))
 print(celsius_to_kelvin(30))
 print(fahrenheit_to_celsius(45))
-print(get_BMI(99, 200))
+print(get_bmi(99, 200))
 print(calculate_tip(50, 10))
 print(arithmetic_mean(45, 32, 89, 78))
 print(absolute_value(-5))
@@ -497,6 +540,14 @@ print(check_anagrams('kajak', 'kajak'))
 print(capitalize_sentences(['ala ma kota', 'Litwo ojczyzno moja']))
 print(fibonacci(10))
 print(cuboid_surface_area(10, 15, 20))
+print(make_upper('ala'))
+print(make_lower('ALA'))
+print(reverse_word('janusz'))
+print(count_letters('a', 'bartek'))
+print(calculate_speed(1000, 100))
+print(calculate_salary(23, 166))
+print(meters_to_feet(1999))
+print(km_to_miles(3456))
 
 # built-in
 print(get_absolute_value(-5.4))
