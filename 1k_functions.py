@@ -1,3 +1,30 @@
+def celsius_to_fahrenheit(temperature):
+    return temperature * 9/5 + 32
+
+
+def absolute_value(num):
+    return num if num >= 0 else -num
+
+
+def cube(x):
+    return x * x * x
+
+
+def power_number(number, power):
+    return number ** power
+
+
+def power_list(numbers_list, power):
+    result = []
+    for i in numbers_list:
+        result.append(i ** power)
+    return result
+
+
+def volume_of_cuboid(length, breadth, height):
+    return length * breadth * height
+
+
 def get_date(year, month, day):
     date = str(day) + '/' + str(month) + '/' + str(year)
     return date
@@ -15,9 +42,14 @@ def get_even_number_from_list(list_of_numbers):
     result = []
 
 
+def get_module_name():
+    return __doc__
+
+
+def get_module_file():
+    return __file__
+
 # built-in
-
-
 def get_absolute_value(item):
     if isinstance(item, (list, tuple)):
         return [abs(number) for number in item]
@@ -119,9 +151,17 @@ def get_unique_list(list_of_numbers):
     return set(list_of_numbers)
 
 
+print(celsius_to_fahrenheit(20))
+print(absolute_value(-5))
+print(cube(3))
+print(power_number(2, 2))
+print(power_list([2, 3, 4], 2))
+print(volume_of_cuboid(10, 10, 10))
 print(get_date(1992, 20, 3))
 print(calculate_average([20, 40, 60]))
 print(calc_seconds_in_your_age(30))
+print(get_module_name())
+print(get_module_file())
 
 # built-in
 print(get_absolute_value(-5.4))
