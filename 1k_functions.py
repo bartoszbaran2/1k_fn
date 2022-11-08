@@ -3,10 +3,6 @@ import random
 from datetime import datetime
 
 
-def print_truth():
-    print('mam już dość!')
-
-
 def coin_toss():
     return random.choice(["Heads", "Tails"])
 
@@ -375,6 +371,46 @@ def km_to_miles(km):
     return km * 0.621371192
 
 
+def find_array_item(array, item):
+    result = None
+    for element in array:
+        if array.index(element) == item:
+            result = element
+
+    return result
+
+
+def is_item_in_array(array, item):
+    if item in array:
+        return f'{item} found in array'
+    else:
+        return f'{item} not found'
+
+
+def print_truth():
+    print('mam już dość!')
+
+
+def m_to_km(meters):
+    return round(meters / 1000, 2)
+
+
+def min_to_h(minutes):
+    return round(minutes / 60, 2)
+
+
+def convert_f_to_c(temperature):
+    return round((temperature - 32) * 0.5556, 2)
+
+
+def convert_c_to_f(temperature):
+    return round((temperature * 1.8) + 32, 2)
+
+
+def convert_c_to_k(temperature):
+    return temperature + 273.15
+
+
 # built-in
 def get_absolute_value(item):
     if isinstance(item, (list, tuple)):
@@ -477,7 +513,6 @@ def get_unique_list(list_of_numbers):
     return set(list_of_numbers)
 
 
-print_truth()
 print(coin_toss())
 print(is_even_odd(5))
 print(celsius_to_fahrenheit(20))
@@ -548,8 +583,14 @@ print(calculate_speed(1000, 100))
 print(calculate_salary(23, 166))
 print(meters_to_feet(1999))
 print(km_to_miles(3456))
-
-# built-in
+print(find_array_item([1, 2, 'trzy', 4, 'pięć'], 4))
+print(is_item_in_array([1, 2, 'trzy', 4, 'pięć'], 4))
+print_truth()
+print(m_to_km(456))
+print(min_to_h(360))
+print(convert_f_to_c(78))
+print(convert_c_to_f(78))
+print(convert_c_to_k(100))
 print(get_absolute_value(-5.4))
 print(get_binary(-55))
 print(get_character([8364, 49]))
