@@ -1,5 +1,6 @@
 import math
 import random
+import statistics
 import string
 from datetime import datetime
 
@@ -876,16 +877,12 @@ def check_lower(text):
     return text.islower()
 
 
-def check_numeric(text):
-    return text.isnumeric(text)
-
-
 def check_printable(text):
     return text.isprintable()
 
 
 def check_space(text):
-    return text.isspace(text)
+    return text.isspace()
 
 
 def check_if_title(text):
@@ -894,6 +891,194 @@ def check_if_title(text):
 
 def check_if_upper(text):
     return text.isupper()
+
+
+def mean(x):
+    return statistics.mean(x)
+
+
+def fmean(x):
+    return statistics.fmean(x)
+
+
+def geometric_mean(data):
+    return statistics.geometric_mean(data)
+
+
+def median(data):
+    return statistics.median(data)
+
+
+def median_low(data):
+    return statistics.median_low(data)
+
+
+def median_high(data):
+    return statistics.median_high(data)
+
+
+def median_grouped(data):
+    return statistics.median_grouped(data)
+
+
+def mode(data):
+    return statistics.mode(data)
+
+
+def multi_mode(data):
+    return statistics.multimode(data)
+
+
+def standard_deviation(data):
+    return statistics.pstdev(data)
+
+
+def variance(data):
+    return statistics.pvariance(data)
+
+
+def standard_deviation2(data):
+    return statistics.stdev(data)
+
+
+def variance2(data):
+    return statistics.variance(data)
+
+
+def quantiles(data):
+    return statistics.quantiles(data)
+
+
+def covariance(x, y):
+    return statistics.covariance(x, y)
+
+
+def correlation(x, y):
+    return statistics.correlation(x, y)
+
+
+def linear_regression(x, y):
+    return statistics.linear_regression(x, y)
+
+
+def make_negative_number(number):
+    if number > 0:
+        return number * -1
+    else:
+        return number
+
+
+def reverse_list(l):
+    return l[::-1]
+
+
+def reverse_text(text):
+    return text[::-1]
+
+
+def is_plural(n):
+    if n == 1:
+        return False
+    else:
+        return True
+
+
+def auto_factory(brand, max_speed):
+    return {
+        'brand': brand,
+        'speed': 0,
+        'max_speed': max_speed,
+        'engine': False
+    }
+
+
+def start_engine(car):
+    if not car['engine']:
+        car['engine'] = True
+        print('Engine started')
+    else:
+        print('Engine already started')
+
+
+def stop_engine(car):
+    car['engine'] = False
+    print('Engine stopped')
+
+
+def accelerate(car, speed):
+    if car['engine']:
+        car['speed'] = min(car['speed'] + speed, car['max_speed'])
+        print('Speed: {}'.format(car['speed']))
+    else:
+        print('Engine is not started')
+
+
+# todo
+def sort_todo(fn):
+    def inner(*args, **kwargs):
+        return sorted(fn(*args, **kwargs), key=lambda item: item['status'], reverse=True)
+    return inner
+
+
+def todo_app():
+    tasks_list = []
+
+    @sort_todo
+    def todo_instance_(fn=None, **kwargs):
+        return fn(tasks_list, **kwargs) if fn is not None else tasks_list
+
+    return todo_instance_
+
+
+def get_task(tasks_list, task_name, task_day):
+    task = None
+    for task in tasks_list:
+        if task['title'] == task_name.lower() and task['day'] == task_day.lower():
+            task = task
+            break
+    return task
+
+
+def add_task(task_list, task):
+    task_lowercase = dict((k.lower(), v.lower()) for k, v in task.items())
+    task_list.append(task_lowercase)
+    return task_list
+
+
+def delete_task(task_list, task_name, task_day):
+    task = get_task(task_list, task_name, task_day)
+
+    if task is None:
+        raise ValueError(f'can not find and delete task: {task_name}, try again!')
+
+    task_list.remove(task)
+    return task_list
+
+
+def update_task(task_list, task_name, task_day, updates):
+    task = get_task(task_list, task_name, task_day)
+
+    if task is None:
+        raise ValueError(f'can not find and update task: {task_name}, try again!')
+
+    updates_lower = dict((k.lower(), v.lower()) for k, v in updates.items())
+
+    task.update(updates_lower)
+    return task_list
+
+
+def search_task(task_list, title=''):
+    return [task for task in task_list if title.lower() in task['title'].lower()]
+
+
+def filter_by_status(task_list, status):
+    task_list_by_status = []
+
+    for task in task_list:
+        if task['status'] == status:
+            task_list_by_status.append(task)
+
+    return task_list_by_status
 
 
 # built-in
@@ -1172,11 +1357,44 @@ print(check_decimal('123'))
 print(check_digit('123'))
 print(check_identifier('janusz'))
 print(check_lower('janusz'))
-print(check_numeric('11111'))
 print(check_printable('janusz'))
 print(check_space('ala ma kota'))
 print(check_if_title('Janusz'))
 print(check_if_upper('Janusz'))
+print(mean([1, 2, 3]))
+print(fmean([1, 2, 3]))
+print(geometric_mean([1, 2, 3]))
+print(median([1, 2, 3]))
+print(median_low([1, 2, 3]))
+print(median_high([1, 2, 3]))
+print(median_grouped([1, 2, 3]))
+print(mode([1, 2, 3]))
+print(multi_mode([1, 2, 3]))
+print(standard_deviation([1, 2, 3]))
+print(variance([1, 2, 3]))
+print(standard_deviation2([1, 2, 3]))
+print(variance2([1, 2, 3]))
+print(quantiles([1, 2, 3]))
+print(covariance([1, 2, 3], [1, 2, 3]))
+print(correlation([1, 2, 3], [1, 2, 3]))
+print(linear_regression([1, 2, 3], [1, 2, 3]))
+print(make_negative_number(55))
+print(reverse_list([1, 2, 3]))
+print(reverse_text('ala ma kota'))
+print(is_plural(5))
+print(auto_factory('audi', str(100)))
+# print(start_engine('audi'))
+# print(stop_engine(auto_factory('audi', str(100))))
+# print(accelerate('audi', '100'))
+# # todo
+# sort_todo()
+# todo_app()
+# get_task()
+# add_task()
+# delete_task()
+# update_task()
+# search_task()
+# filter_by_status()
 print(get_absolute_value(-5.4))
 print(get_binary(-55))
 print(get_character([8364, 49]))
