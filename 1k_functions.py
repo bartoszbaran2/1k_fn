@@ -1,5 +1,6 @@
 import math
 import random
+import string
 from datetime import datetime
 
 
@@ -146,6 +147,42 @@ def local_and_global_function():
     print(local_variable)
 
 
+def h_to_min(hours):
+    return hours * 60
+
+
+def calculate_rectangle_area(a, b):
+    return a * b
+
+
+def calculate_parallelogram_area(width, height):
+    return width * height
+
+
+def calculate_triangle_area(height, width):
+    return (height * width) / 2
+
+
+def calculate_trapezoid_area(a, b, h):
+    return (a + b) * h / 2
+
+
+def calculate_ellipse_area(major_axis, minor_axis):
+    return math.pi * major_axis * minor_axis
+
+
+def circular_sector_area(angle, radius):
+    return angle * (math.pi * radius / 360)
+
+
+def regular_hexagon_area(side):
+    return 3 * side * math.sqrt(3)
+
+
+def deltoid_area(height, width):
+    return height * width / 2
+
+
 def cube(x):
     return x * x * x
 
@@ -245,6 +282,79 @@ def get_ing(wd):
     return wd + 'ing'
 
 
+def is_fibonacci(n):
+    s = []
+    a, b = 0, 1
+    while a <= n:
+        s = [a]
+        a, b = b, a + b
+    if n in s:
+        return True
+    else:
+        return False
+
+
+def calculation_two_numbers(a, b):
+    addition = a + b
+    substraction = a - b
+    return addition, substraction
+
+
+def total_list_value(lst):
+    acc = 0
+    for x in lst:
+        acc = acc + x
+    return acc
+
+
+def is_longer_then_5(lst):
+    if len(lst) >= 5:
+        return "Longer than 5"
+    else:
+        return "Less than 5"
+
+
+def reverse_string(my_str):
+    reversed_str = ''
+    for char in my_str:
+        reversed_str = char + reversed_str
+    return reversed_str
+
+
+def mirror_string(p_phrase):
+    string_length = len(p_phrase)
+    r_phrase = p_phrase[string_length::-1]
+    return p_phrase + r_phrase
+
+
+def is_number_in_range(num, low, high):
+    for i in range(low,high+1):
+        if num == i:
+            return 'Number is within the range'
+        else:
+            return 'Number is out of range'
+
+
+def unique_list(array):
+    x = set(array)
+    return list(x)
+
+
+def is_palindrome(s):
+    reverse_s=s[::-1]
+    if s == reverse_s:
+        return 'string is palindrome'
+    else:
+        return'not a palindrome'
+
+
+def remove_letter(letter, text):
+    if letter in text:
+        return text.replace(letter, "")
+    else:
+        return text
+
+
 def same_initial(wd1, wd2):
     if wd1[0].lower() == wd2[0].lower():
         return True
@@ -300,9 +410,67 @@ def max_or_min(x, y, mode="max"):
         return None
 
 
-def print_current_date():
+def get_current_date():
     current_date = datetime.now().date()
-    print(current_date)
+    return current_date
+
+
+def get_current_date_time():
+    datetime_object = datetime.now()
+    return datetime_object
+
+
+def get_current_time():
+    return datetime.now().strftime('%H:%M:%S')
+
+
+employees = [{
+        'name': 'Jane',
+        'salary': 90000,
+        'job_title': 'developer'
+    }, {
+        'name': 'Bill',
+        'salary': 50000,
+        'job_title': 'writer'
+    }, {
+        'name': 'Kathy',
+        'salary': 120000,
+        'job_title': 'executive'
+    }, {
+        'name': 'Anna',
+        'salary': 100000,
+        'job_title': 'developer'
+    }, {
+        'name': 'Dennis',
+        'salary': 95000,
+        'job_title': 'developer'
+    }, {
+        'name': 'Albert',
+        'salary': 70000,
+        'job_title': 'marketing specialist'
+    }]
+
+
+def is_developer(employee):
+    return employee['job_title'] == 'developer'
+
+
+def is_not_developer(employee):
+    return employee['job_title'] != 'developer'
+
+
+def get_developers():
+    developers = list(filter(is_developer, employees))
+    return developers
+
+
+def get_non_developers():
+    non_developers = list(filter(is_not_developer, employees))
+    return non_developers
+
+
+def get_salary(employee):
+    return employee['salary']
 
 
 def get_average(*args):
@@ -380,11 +548,257 @@ def find_array_item(array, item):
     return result
 
 
+def generate_full_name(first_name, last_name):
+    full_name = first_name.capitalize() + ' ' + last_name.capitalize()
+    return full_name
+
+
+def count_capital_letters(string):
+    counter = 0
+    for char in string:
+        if char.isupper():
+            counter += 1
+    return counter
+
+
+def pascal_to_hpa(pascals):
+    return pascals / 100
+
+
+def pascal_to_bar(pascals):
+    return pascals * math.pow(10, -5)
+
+
+def pascal_to_newton_on_sq_mm(pascals):
+    return pascals * math.pow(10, -6)
+
+
+def pascal_to_kg_on_sq_m(pascals):
+    return round(pascals/ 9.80665, 2)
+
+
+def pascal_to_at(pascals):
+    return round(pascals / 98066.5, 2)
+
+
+def pascal_to_atm(pascals):
+    return pascals / 101325
+
+
+def pascal_to_tr(pascals):
+    return round(pascals / 133.322, 2)
+
+
+def pascal_to_psi(pascals):
+    return round(pascals / 6894.76, 2)
+
+
+def joul_to_kj(jouls):
+    return jouls / 1000
+
+
+def joul_to_kgm(jouls):
+    return round(jouls / 9.80665, 2)
+
+
+def joul_to_wh(jouls):
+    return round(jouls / 3600, 2)
+
+
+def joul_to_kwh(jouls):
+    return jouls / 3600000
+
+
+def joul_to_cal(jouls):
+    return jouls / 4.1268
+
+
+def joul_to_kcal(jouls):
+    return jouls / 4186.8
+
+
 def is_item_in_array(array, item):
     if item in array:
         return f'{item} found in array'
     else:
         return f'{item} not found'
+
+
+def dollar_to_euro(dollar_value):
+    return dollar_value * 0.89
+
+
+def euro_to_yen(euro_value):
+    return euro_value * 124.15
+
+
+def random_int_in_range(a, b):
+    return random.randrange(a, b)
+
+
+def random_choice_from_array(array):
+    return random.choice(array)
+
+
+def shuffle_array(array):
+    return random.shuffle(array)
+
+
+def random_from_0_to_1():
+    return random.random()
+
+
+def get_random_float_from_range(a, b):
+    return random.uniform(a, b)
+
+
+def get_random_float_from_range_with_param(a, b, c):
+    return random.triangular(a, b, c)
+
+
+def generate_random_numbers_list(start, end, length):
+    return [random.randint(start, end) for _ in range(length)]
+
+
+def generate_random_string_list(length):
+    return [random.choice(string.ascii_letters) for _ in range(length)]
+
+
+def seconds_to_minutes(sec):
+    return sec / 60
+
+
+def seconds_to_hours(sec):
+    return sec / 3600
+
+
+def seconds_to_days(sec):
+    return sec / 86400
+
+
+def seconds_to_weeks(sec):
+    return sec / 604800
+
+
+def seconds_to_months(sec):
+    return sec / 2628000
+
+
+def seconds_to_years(sec):
+    return sec / 31536000
+
+
+def hours_to_seconds(hours):
+    return hours * 3600
+
+
+def hours_to_minutes(hours):
+    return hours * 60
+
+
+def hours_to_microseconds(hours):
+    return hours * 3600000000
+
+
+def days_to_seconds(days):
+    return days * 86400
+
+
+def days_to_minutes(days):
+    return days * 1440
+
+
+def days_to_hours(days):
+    return days * 24
+
+
+def days_to_microseconds(days):
+    return days * 86400000000
+
+
+def get_center_string(text, param):
+    return text.center(param)
+
+
+def is_ends_with_dot(text):
+    return text.endswith('.')
+
+
+def join_array_by_param(array, param):
+    return param.join(array)
+
+
+def strip_string(text):
+    return text.strip()
+
+
+def replace_fruit(fruit):
+    text = 'i like bananas'
+    return text.replace('bananas', fruit)
+
+
+def feet_to_milimeter(value):
+    return value * 304.8
+
+
+def feet_to_micrometer(value):
+    return value * 304800
+
+
+def feet_to_meter(value):
+    return value * 0.30
+
+
+def feet_to_mile(value):
+    return value * 0.00018
+
+
+def feet_to_kilometer(value):
+    return value * 0.00030
+
+
+def feet_to_yard(value):
+    return value * 0.33
+
+
+def feet_to_inch(value):
+    return value * 12
+
+
+def feet_to_centimeter(value):
+    return value * 30.48
+
+
+def mile_to_milimeter(value):
+    return value * 1609344
+
+
+def mile_to_micrometer(value):
+    return value * 1609344000
+
+
+def mile_to_nanometer(value):
+    return value * 1609344000000
+
+
+def mile_to_meter(value):
+    return value * 1609.344
+
+
+def mile_to_feet(value):
+    return value * 5280
+
+
+def mile_to_kilometer(value):
+    return value * 1.609344
+
+
+def mile_to_yard(value):
+    return value * 1760
+
+
+def mile_to_inch(value):
+    return value * 63360
 
 
 def print_truth():
@@ -409,6 +823,77 @@ def convert_c_to_f(temperature):
 
 def convert_c_to_k(temperature):
     return temperature + 273.15
+
+
+def count_letters_in_word(word):
+    counter = 0
+
+    for _ in word:
+        counter += 1
+
+    return counter
+
+
+def count_digits_in_number(number):
+    counter = 0
+
+    while number > 0:
+        counter += 1
+        number = number // 10
+
+    return counter
+
+
+def count_elements_in_list(my_list):
+    counter = 0
+    for _ in my_list:
+        counter += 1
+
+    return counter
+
+
+def check_alphanumeric(text):
+    return text.isalnum()
+
+
+def check_ascii(text):
+    return text.isascii()
+
+
+def check_decimal(text):
+    return text.isdecimal()
+
+
+def check_digit(text):
+    return text.isdigit()
+
+
+def check_identifier(text):
+    return text.isidentifier()
+
+
+def check_lower(text):
+    return text.islower()
+
+
+def check_numeric(text):
+    return text.isnumeric(text)
+
+
+def check_printable(text):
+    return text.isprintable()
+
+
+def check_space(text):
+    return text.isspace(text)
+
+
+def check_if_title(text):
+    return text.istitle()
+
+
+def check_if_upper(text):
+    return text.isupper()
 
 
 # built-in
@@ -541,6 +1026,15 @@ print(volume_pyramid(13, 14, 11))
 print(calculate_trapezoid(2, 4, 5))
 print(dog_age(30))
 local_and_global_function()
+print(h_to_min(2))
+print(calculate_rectangle_area(4, 5))
+print(calculate_parallelogram_area(4, 5))
+print(calculate_triangle_area(4, 5))
+print(calculate_trapezoid_area(4, 5, 5))
+print(calculate_ellipse_area(4, 5))
+print(circular_sector_area(15, 25))
+print(regular_hexagon_area(4.5))
+print(deltoid_area(15, 25))
 print(cube(3))
 print(power_number(2, 2))
 print(power_list([2, 3, 4], 2))
@@ -562,6 +1056,16 @@ print(subtract(10, 15))
 print(multiply(10, 15))
 print(divide(10, 15))
 print(get_ing('walk'))
+print(is_fibonacci(8))
+print(calculation_two_numbers(5, 10))
+print(total_list_value([1, 2, 3]))
+print(is_longer_then_5([3, 4, 5, 5]))
+print(reverse_string('kot'))
+print(mirror_string('ahmed'))
+print(remove_letter('d', 'dom'))
+print(is_number_in_range(5, 2, 10))
+print(unique_list([1, 1, 2, 3, 3]))
+print(is_palindrome('kajak'))
 print(same_initial('apple', 'orange'))
 print(in_both('pear', 'apple'))
 print(odd_or_even(-2))
@@ -569,7 +1073,13 @@ print(count_vowels("Hi my name is Ryan"))
 print(is_bounded(5, 10, 15))
 print(count_even((5, 10, 15)))
 print(max_or_min(14, 24, 'min'))
-print_current_date()
+print(get_current_date())
+print(get_current_time())
+# print(is_developer('Albert'))
+# print(is_not_developer('Dennis'))
+# print(get_salary('Bill'))
+# print(get_developers())
+# print(get_non_developers())
 print(get_average(15, 23))
 print(check_anagrams('kajak', 'kajak'))
 print(capitalize_sentences(['ala ma kota', 'Litwo ojczyzno moja']))
@@ -584,13 +1094,89 @@ print(calculate_salary(23, 166))
 print(meters_to_feet(1999))
 print(km_to_miles(3456))
 print(find_array_item([1, 2, 'trzy', 4, 'pięć'], 4))
+print(generate_full_name('adam', 'małysz'))
+print(count_capital_letters('Ala Ma Kota'))
+print(pascal_to_hpa(1500))
+print(pascal_to_bar(1500))
+print(pascal_to_newton_on_sq_mm(1500))
+print(pascal_to_kg_on_sq_m(1500))
+print(pascal_to_at(1500))
+print(pascal_to_atm(1500))
+print(pascal_to_tr(1500))
+print(pascal_to_psi(1500))
+print(joul_to_kj(1500))
+print(joul_to_kgm(1500))
+print(joul_to_wh(1500))
+print(joul_to_kwh(1500))
+print(joul_to_cal(1500))
+print(joul_to_kcal(1500))
 print(is_item_in_array([1, 2, 'trzy', 4, 'pięć'], 4))
+print(dollar_to_euro(100))
+print(euro_to_yen(100))
+print(random_int_in_range(1, 10))
+print(random_choice_from_array(["apple", "banana", "cherry"]))
+print(shuffle_array(["apple", "banana", "cherry"]))
+print(random_from_0_to_1())
+print(get_random_float_from_range(20, 60))
+print(get_random_float_from_range_with_param(20, 40, 60))
+print(generate_random_numbers_list(2, 5, 15))
+print(generate_random_string_list(15))
+print(seconds_to_minutes(100))
+print(seconds_to_hours(100))
+print(seconds_to_days(100))
+print(seconds_to_weeks(100))
+print(seconds_to_months(1000000))
+print(seconds_to_years(1000000))
+print(hours_to_seconds(15))
+print(hours_to_minutes(15))
+print(hours_to_microseconds(15))
+print(days_to_seconds(10))
+print(days_to_minutes(10))
+print(days_to_hours(10))
+print(days_to_microseconds(10))
+print(get_center_string('ala', 20))
+print(is_ends_with_dot('ala ma kota.'))
+print(join_array_by_param(["John", "Peter", "Vicky"], '-'))
+print(strip_string('    banana     '))
+print(replace_fruit('apple'))
+print(feet_to_milimeter(150))
+print(feet_to_micrometer(150))
+print(feet_to_micrometer(150))
+print(feet_to_meter(150))
+print(feet_to_mile(150))
+print(feet_to_mile(150))
+print(feet_to_kilometer(150))
+print(feet_to_yard(150))
+print(feet_to_inch(150))
+print(feet_to_centimeter(150))
+print(mile_to_milimeter(200))
+print(mile_to_micrometer(200))
+print(mile_to_nanometer(200))
+print(mile_to_meter(200))
+print(mile_to_feet(200))
+print(mile_to_kilometer(200))
+print(mile_to_yard(200))
+print(mile_to_inch(200))
 print_truth()
 print(m_to_km(456))
 print(min_to_h(360))
 print(convert_f_to_c(78))
 print(convert_c_to_f(78))
 print(convert_c_to_k(100))
+print(count_letters_in_word('ala ma kota'))
+print(count_digits_in_number(1500))
+print(count_elements_in_list([1, 2, 3, 4, 5, 6]))
+print(check_alphanumeric('janusz'))
+print(check_ascii('janusz'))
+print(check_decimal('123'))
+print(check_digit('123'))
+print(check_identifier('janusz'))
+print(check_lower('janusz'))
+print(check_numeric('11111'))
+print(check_printable('janusz'))
+print(check_space('ala ma kota'))
+print(check_if_title('Janusz'))
+print(check_if_upper('Janusz'))
 print(get_absolute_value(-5.4))
 print(get_binary(-55))
 print(get_character([8364, 49]))
