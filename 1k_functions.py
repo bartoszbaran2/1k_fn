@@ -23,6 +23,10 @@ def random_color2():
     return "A Random color is :", hexadecimal
 
 
+def boolean_to_string(b):
+    return 'True' if b else 'False'
+
+
 def is_even_odd(x):
     return 'even' if (x % 2 == 0) else 'odd'
 
@@ -1802,9 +1806,121 @@ def gigajoules_to_megajoules(gigajoules):
     return gigajoules * 1000
 
 
+def string_title(text):
+    return text.title()
+
+
+def string_upper_case(text):
+    return text.upper()
+
+
+def string_lower_case(text):
+    return text.lower()
+
+
+def split_string(text):
+    return text.split()
+
+
+def swap_string_case(text):
+    return text.swapcase()
+
+
+def capitalize_string(text):
+    return text.capitalize()
+
+
+def string_ends_with(text):
+    return text.endswith('a')
+
+
+def string_starts_with(text):
+    return text.startswith('v')
+
+
+def string_is_alnum(text):
+    return text.isalnum()
+
+
+def string_is_alpha(text):
+    return text.isalpha()
+
+
+def string_is_decimal(text):
+    return text.isdecimal()
+
+
+def string_is_digit(text):
+    return text.isdigit()
+
+
+def string_is_identifier(text):
+    return text.isidentifier()
+
+def string_is_lower(text):
+    return text.islower()
+
+
+def string_is_numeric(text):
+    return text.isnumeric()
+
+
+def string_is_printable(text):
+    return text.isprintable()
+
+
+def is_space_in_string(text):
+    return text.isspace()
+
+
+def string_is_title(text):
+    return text.istitle()
+
+
+def string_is_upper(text):
+    return text.isupper()
+
+
+def appending_to_list(x):
+    temp = []
+    temp.append(x)
+    return temp
+
+
+def removing_from_list(x):
+    temp1 = ['dom', 'dupa']
+    temp1.remove(x)
+    return temp1
+
+
+def popping_list():
+    temp = ['dom', 'auto']
+    temp.pop()
+    return temp
+
+
+def clear_list():
+    temp1 = ['komp', 'dupa']
+    temp1.clear()
+    return temp1
+
+
+def counting_in_list(x):
+    temp = ['komp', 'dupa']
+    y = temp.count(x)
+    return y
+
+
+def reversing_list():
+    temp = ['komp', 'dupa']
+    temp.reverse()
+    return temp
+
+
 print(coin_toss())
 print(random_color())
 print(random_color2())
+print(boolean_to_string([]))
 print(is_even_odd(5))
 print(celsius_to_fahrenheit(20))
 print(fahrenheit_to_celsius(67))
@@ -2159,3 +2275,47 @@ print(gigajoules_to_btu(10))
 print(gigajoules_to_joules(10))
 print(gigajoules_to_kilojoules(10))
 print(gigajoules_to_megajoules(10))
+print(string_title('ala'))
+print(string_upper_case('ola i przedszkole'))
+print(string_lower_case('ABCDE'))
+print(split_string('ala'))
+print(swap_string_case('wszy'))
+print(capitalize_string('ala ma kota'))
+print(string_ends_with('ala'))
+print(string_starts_with('hel'))
+print(string_is_alnum('python.py'))
+print(string_is_alpha('domek'))
+print(string_is_decimal('562632'))
+print(string_is_digit('ala'))
+print(string_is_identifier('ala'))
+print(string_is_lower('ALA'))
+print(string_is_numeric('jaroslaw'))
+print(string_is_printable('dominik'))
+print(is_space_in_string('     AWS'))
+print(string_is_title('Tadeusz'))
+print(string_is_upper('AMADEUSZ'))
+print(appending_to_list('kasztan'))
+print(removing_from_list('kot'))
+print(popping_list())
+print(clear_list())
+print(counting_in_list('pies'))
+print(add_two_lists([1, 2, 3], [10, 10, 10]))
+print(get_max_from_list([10, 15, 20]))
+print(get_min_from_list([10, 15, 20]))
+print(read_text_file('text.txt', 'r'))
+print(find_unicode('B'))
+print(power_numbers(7, 2, 5))
+print(reverse_iterable((2, 3, 4, 5)))
+print(round_float(5.6666, 3))
+print(get_your_initials('bartek'))
+print(get_unique_list([2, 3, 4, 4, 4, 5]))
+print(get_product_price(product_data))
+print(get_product_price2(product_data))
+print(change_product_price(product_data, 2.00))
+print(update_product(product_data, 'seller', 'Aldi'))
+print(update_product(product_data, 'tax', '23%'))
+print(get_today_date_time())
+print(calculate_future_date(20))
+print(calculate_past_date(20))
+print(get_day_name_for_date(1992, 3, 20))
+print(get_current_time2())
