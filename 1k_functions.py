@@ -1,8 +1,9 @@
 import math
 import random
+import re
 import statistics
 import string
-from datetime import datetime
+from datetime import datetime, timedelta, date
 
 
 def coin_toss():
@@ -1183,6 +1184,375 @@ def get_unique_list(list_of_numbers):
     return set(list_of_numbers)
 
 
+product_data = {
+    "name": "apple",
+    "founder": "jabłko_polskie",
+    "type": "fruit",
+    "price": 1.88,
+    "unit": 'kg',
+    "country": "poland",
+}
+
+
+def get_product_price(product):
+    return product.get('price')
+
+
+def get_product_price2(product):
+    return product['price']
+
+
+def change_product_price(product, price):
+    product['price'] = price
+    return product['price']
+
+
+def update_product(product, key, value):
+    product.update({key: value})
+    return product
+
+
+def update_product2(product, key, value):
+    product[key] = value
+
+
+def get_today_date_time():
+    date_ = datetime.today()
+    return date_.strftime("%m/%d/%Y, %H:%M:%S")
+
+
+def calculate_past_date(number_of_days):
+    date_ = datetime.today() - timedelta(days=number_of_days)
+    return date_.strftime("%m/%d/%Y")
+
+
+def calculate_future_date(number_of_days):
+    date_ = datetime.today() + timedelta(days=number_of_days)
+    return date_.strftime("%m/%d/%Y")
+
+
+def get_day_name_for_date(year, month, day):
+    date_ = date(year, month, day)
+    return date_.strftime('%A')
+
+
+def get_current_time2():
+    return datetime.now().strftime('%H:%M:%S')
+
+
+def dollars_to_cents(amount):
+    return f'{amount} dollars is: {amount * 100} cents'
+
+
+def pln_to_eur(pln_amount):
+    eur_amount = pln_amount / 4.72
+    return f'{pln_amount} PLN is: {round(eur_amount, 2)} EUR'
+
+
+def pln_to_usd(pln_amount):
+    usd_amount = pln_amount / 4.76
+    return f'{pln_amount} PLN is: {round(usd_amount, 2)} USD'
+
+
+def pln_to_gpb(pln_amount):
+    gpb_amount = round(pln_amount / 5.48, 2)
+
+    return f'{pln_amount} PLN is: {gpb_amount} GPB'
+
+
+def pln_to_chf(pln_amount):
+    chf_amount = round(pln_amount / 4.8, 2)
+
+    return f'{pln_amount} PLN is: {chf_amount} CHF'
+
+
+def pln_to_aud(pln_amount):
+    aud_amount = round(pln_amount / 3.06, 2)
+
+    return f'{pln_amount} PLN is: {aud_amount} AUD'
+
+
+def pln_to_bgn(pln_amount):
+    bgn_amount = round(pln_amount / 2.39, 2)
+
+    return f'{pln_amount} PLN is: {bgn_amount} BGN'
+
+
+def pln_to_cad(pln_amount):
+    cad_amount = round(pln_amount / 3.5, 2)
+
+    return f'{pln_amount} PLN is: {cad_amount} CAD'
+
+
+def pln_to_czk(pln_amount):
+    czk_amount = round(pln_amount / 0.19, 2)
+
+    return f'{pln_amount} PLN is: {czk_amount} CZK'
+
+
+def pln_to_dkk(pln_amount):
+    dkk_amount = round(pln_amount / 0.63, 2)
+
+    return f'{pln_amount} PLN is: {dkk_amount} DKK'
+
+
+def pln_to_hkd(pln_amount):
+    hkd_amount = round(pln_amount / 0.6, 2)
+
+    return f'{pln_amount} PLN is: {hkd_amount} HKD'
+
+
+def pln_to_hrk(pln_amount):
+    hrk_amount = round(pln_amount / 0.63, 2)
+
+    return f'{pln_amount} PLN is: {hrk_amount} HRK'
+
+
+def joule_to_ev(joul_amount):
+    return joul_amount * 6.241509 * math.pow(10, 18)
+
+
+def joul_to_ry(joul_amount):
+    return joul_amount * 4.5874 * math.pow(10, 17)
+
+
+def celsius_to_rankine(celsius):
+    return (celsius + 273.15) * 1.8
+
+
+def celsius_to_reaumur(celsius):
+    return (celsius * 4) / 5
+
+
+def celsius_to_romer(celsius):
+    return celsius * 21 / 40 + 7.5
+
+
+def celsius_to_delisle(celsius):
+    return (100 - celsius) * 3 / 2
+
+
+def celsius_to_newton(celsius):
+    return celsius * 33 / 100
+
+
+def rankine_to_celsius(rankine):
+    return (rankine / 1.8) - 273.15
+
+
+def reaumur_to_celsius(reaumur):
+    return 1.25 * reaumur
+
+
+def romer_to_celsius(romer):
+    return (romer - 7.5) * 40 / 21
+
+
+def delisle_to_celsius(delisle):
+    return 100 - delisle * 2 / 3
+
+
+def newton_to_celsius(newton):
+    return newton * 100 / 33
+
+
+def fahrenheit_to_kelvin(fahrenheit):
+    return (fahrenheit + 459.67) * 5 / 9
+
+
+def fahrenheit_to_rankine(fahrenheit):
+    return fahrenheit + 459.67
+
+
+def fahrenheit_to_reaumur(fahrenheit):
+    return (fahrenheit - 32) * 4 / 9
+
+
+def fahrenheit_to_romer(fahrenheit):
+    return (fahrenheit - 32) * 7 / 24 + 7.5
+
+
+def fahrenheit_to_delisle(fahrenheit):
+    return (212 - fahrenheit) * 5 / 6
+
+
+def fahrenheit_to_newton(fahrenheit):
+    return (fahrenheit - 32) * 11 / 60
+
+
+def degree_to_arcminute(degree):
+    return degree * 60
+
+
+def degree_to_arcsecond(degree):
+    return degree * 3600
+
+
+def radian_to_degree(radian):
+    return radian * 57.295779513082
+
+
+def radian_to_gradian(radian):
+    return radian * 63.661977236758
+
+
+def radian_to_arcminute(radian):
+    return radian * 3437.7467707849
+
+
+def radian_to_arcsecond(radian):
+    return radian * 206264.8062471
+
+
+def radian_to_cycle(radian):
+    return radian * 0.1592
+
+
+def arcminute_to_radians(arcminute):
+    return arcminute * (2 * math.pi) / 21600
+
+
+def arcminute_to_degree(arcminute):
+    return arcminute / 60
+
+
+def arcminute_to_gradian(arcminute):
+    return arcminute * 4 / 216
+
+
+def arcminute_to_cycle(arcminute):
+    return arcminute / 21600
+
+
+def arcsecond_to_degree(arcsecond):
+    return arcsecond / 3600
+
+
+def arcsecond_to_arcminute(arcsecond):
+    return arcsecond / 60
+
+
+def arcsecond_to_gradian(arcsecond):
+    return arcsecond * 4 / 12960
+
+
+def arcsecond_to_cycle(arcsecond):
+    return arcsecond / 1296000
+
+
+def get_number():
+    while True:
+        try:
+            result = int(input("Guess the number: "))
+            break
+        except ValueError:
+            print("It's not a number")
+
+    return result
+
+
+def guess_the_number():
+    secret_number = random.randint(1, 100)
+    given_number = get_number()
+    while given_number != secret_number:
+        if given_number < secret_number:
+            print("Too small!")
+        else:
+            print("Too big!")
+        given_number = get_number()
+    print("You Win!")
+
+
+def get_numbers():
+    result = set()
+    while len(result) < 6:
+        number = get_number()
+        if 0 < number <= 49:
+            result.add(number)
+
+    return result
+
+
+def print_numbers(numbers):
+    print(", ".join(str(number) for number in sorted(numbers)))
+
+
+def drawing_numbers():
+    numbers = list(range(1, 50))
+    random.shuffle(numbers)
+    return set(numbers[:6])
+
+
+def lotto():
+    user_numbers = get_numbers()
+    print("Your numbers:")
+    print_numbers(user_numbers)
+
+    random_numbers = drawing_numbers()
+    print("Lotto numbers:")
+    print_numbers(random_numbers)
+
+    hits = 6 - len(random_numbers - user_numbers)
+
+    print(f"You hit {hits} {'number' if hits == 1 else 'numbers'}!")
+
+
+DICE_PATTERN = re.compile(r"^(\d*)D(\d+)([+-]\d+)?$")
+
+
+POSSIBLE_DICES = (
+    "100",
+    "20",
+    "12",
+    "10",
+    "8",
+    "6",
+    "4",
+    "3"
+)
+
+
+def roll_the_dice(dice_code):
+    match = DICE_PATTERN.search(dice_code)
+    if not match:
+        return "Wrong Input"
+
+    multiply2, dice, modifier = match.groups()
+    if dice not in POSSIBLE_DICES:
+        return "Wrong Input"
+
+    multiply2 = int(multiply2) if multiply else 1
+    dice = int(dice)
+    modifier = int(modifier) if modifier else 0
+
+    return sum([random.randint(1, dice) for _ in range(multiply2)]) + modifier
+
+
+def shorten(text):
+    return ''.join(word[0] for word in text.split()).upper()
+
+
+def name_sorter(names):
+    result = {
+        'female': [],
+        'male': []
+    }
+
+    for name in names:
+        if name[-1] == 'a':
+            result['female'].append(name)
+        else:
+            result['male'].append(name)
+    return result
+
+
+def check_palindrome(text):
+    text = text.lower().replace(' ', '')
+    return text == text[::-1]
+
+
+
+
 print(coin_toss())
 print(is_even_odd(5))
 print(celsius_to_fahrenheit(20))
@@ -1418,3 +1788,67 @@ print(reverse_iterable((2, 3, 4, 5)))
 print(round_float(5.6666, 3))
 print(get_your_initials('bartek'))
 print(get_unique_list([2, 3, 4, 4, 4, 5]))
+print(get_product_price(product_data))
+print(get_product_price2(product_data))
+print(change_product_price(product_data, 2.00))
+print(update_product(product_data, 'seller', 'Aldi'))
+print(update_product(product_data, 'tax', '23%'))
+print(get_today_date_time())
+print(calculate_future_date(20))
+print(calculate_past_date(20))
+print(get_day_name_for_date(1992, 3, 20))
+print(get_current_time2())
+print(dollars_to_cents(2))
+print(pln_to_eur(150))
+print(pln_to_usd(150))
+print(pln_to_gpb(150))
+print(pln_to_chf(150))
+print(pln_to_aud(150))
+print(pln_to_bgn(150))
+print(pln_to_cad(150))
+print(pln_to_czk(150))
+print(pln_to_dkk(150))
+print(pln_to_hkd(150))
+print(pln_to_hrk(150))
+print(joule_to_ev(1500))
+print(joul_to_ry(1000))
+print(celsius_to_rankine(25))
+print(celsius_to_reaumur(25))
+print(celsius_to_romer(25))
+print(celsius_to_delisle(25))
+print(celsius_to_newton(25))
+print(rankine_to_celsius(536.15))
+print(reaumur_to_celsius(20))
+print(romer_to_celsius(20.63))
+print(delisle_to_celsius(112.5))
+print(newton_to_celsius(8.25))
+print(fahrenheit_to_kelvin(77))
+print(fahrenheit_to_rankine(77))
+print(fahrenheit_to_reaumur(77))
+print(fahrenheit_to_romer(77))
+print(fahrenheit_to_delisle(77))
+print(degree_to_arcminute(90))
+print(degree_to_arcsecond(90))
+print(radian_to_degree(3))
+print(radian_to_gradian(2))
+print(radian_to_arcminute(3))
+print(radian_to_arcsecond(3))
+print(radian_to_gradian(2))
+print(arcminute_to_radians(8349))
+print(arcminute_to_radians(3))
+print(arcminute_to_gradian(345))
+print(arcminute_to_cycle(1))
+print(arcsecond_to_degree(1))
+print(arcsecond_to_arcminute(1))
+print(arcsecond_to_gradian(1))
+print(arcsecond_to_cycle(1))
+# print(get_number())
+# print(guess_the_number())
+# print(get_numbers())
+# print_numbers()
+# print(drawing_numbers())
+# lotto()
+# roll_the_dice()
+print(shorten('ala'))
+print(['ala', 'ola', 'tomek', 'adam'])
+print(check_palindrome('kajak'))
