@@ -10,6 +10,19 @@ def coin_toss():
     return random.choice(["Heads", "Tails"])
 
 
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    rgb = [r, g, b]
+    return rgb
+
+
+def random_color2():
+    hexadecimal = ["#" + ''.join([random.choice('ABCDEF0123456789') for i in range(6)])]
+    return "A Random color is :", hexadecimal
+
+
 def is_even_odd(x):
     return 'even' if (x % 2 == 0) else 'odd'
 
@@ -1551,9 +1564,247 @@ def check_palindrome(text):
     return text == text[::-1]
 
 
+def div(start, end):
+    return [i for i in range(start, end + 1) if i % 2 == 0 and i % 3 != 0]
+
+
+def roll(dices, dice_type=6, modifier=0):
+    if dice_type not in (3, 4, 6, 8, 10, 12, 100):
+        raise Exception("No such dice!")
+    return sum(random.randint(1, dice_type) for _ in range(dices)) + modifier
+
+
+def herz_to_kiloherz(herz):
+    return herz / 1000
+
+
+def herz_to_hektorez(herz):
+    return herz / 100
+
+
+def herz_to_dekaherz(herz):
+    return herz / 10
+
+
+def herz_to_decyherz(herz):
+    return herz * 10
+
+
+def herz_to_centyherz(herz):
+    return herz * 100
+
+
+def herz_to_miliherz(herz):
+    return herz * 1000
+
+
+def herz_to_microherz(herz):
+    return herz * 1000000
+
+
+def herz_to_nanoherz(herz):
+    return herz * 1000000000
+
+
+def herz_to_picoherz(herz):
+    return herz * 1000000000000
+
+
+def herz_to_femtoherz(herz):
+    return herz * math.pow(10, 15)
+
+
+def cm3_to_dm3(cm3):
+    return cm3 / 1000
+
+
+def cm3_to_ft3(cm3):
+    return cm3 / 28.31685
+
+
+def cm3_to_in3(cm3):
+    return cm3 / 16.39
+
+
+def cm3_to_m3(cm3):
+    return cm3 / math.pow(10, 6)
+
+
+def cm3_to_yd3(cm3):
+    return cm3 / 764.55486
+
+
+def cm3_to_deciliters(cm3):
+    return cm3 / 100
+
+
+def cm3_to_drops(cm3):
+    return cm3 * 20
+
+
+def cm3_to_medical_drops(cm3):
+    return cm3 * 12
+
+
+def cm3_to_metric_cups(cm3):
+    return cm3 * 0.004
+
+
+def m3_to_km3(m3):
+    return m3 * math.pow(10, -9)
+
+
+def m3_to_dc3(m3):
+    return m3 * 10 * math.pow(10, 2)
+
+
+def m3_to_cm3(m3):
+    return m3 * 10 * math.pow(10, 5)
+
+
+def m3_to_mm3(m3):
+    return m3 * 10 * math.pow(10, 8)
+
+
+def m3_to_microm3(m3):
+    return m3 * math.pow(10, 18)
+
+
+def m3_to_nanom3(m3):
+    return m3 * 10 * math.pow(10, 26)
+
+
+def m3_to_liter(m3):
+    return m3 * 10 * math.pow(10, 2)
+
+
+def m3_to_cu_in(m3):
+    return m3 * 6.102374 * math.pow(10, 4)
+
+
+def m3_to_cu_ft(m3):
+    return m3 * 3.531467 * math.pow(10, 1)
+
+
+def m3_to_cu_yd(m3):
+    return m3 * 1.307951
+
+
+def liter_to_km3(liter):
+    return liter * math.pow(10, -12)
+
+
+def liter_to_m3(liter):
+    return liter * math.pow(10, -3)
+
+
+def liter_to_dm3(liter):
+    return liter * 10 * math.pow(10, -1)
+
+
+def liter_to_cm3(liter):
+    return liter * 10 * math.pow(10, 2)
+
+
+def liter_to_mm3(liter):
+    return liter * math.pow(10, 6)
+
+
+def liter_to_microm3(liter):
+    return liter * math.pow(10, 15)
+
+
+def liter_to_nm3(liter):
+    return liter * 10 * math.pow(10, 23)
+
+
+def kilojoules_to_megawatt(kilojoules):
+    return kilojoules / 3599712.02
+
+
+def kilojoules_to_btu(kilojoules):
+    return kilojoules / 1.055
+
+
+def kilojoules_to_kilo_btu(kilojoules):
+    return kilojoules / 1055.05
+
+
+def kilojoules_to_joules(kilojoules):
+    return kilojoules * 1000
+
+
+def kilojoules_to_megajoules(kilojoules):
+    return kilojoules / 1000
+
+
+def kilojoules_to_gigajoules(kilojoules):
+    return kilojoules / 1000000
+
+
+def megajoules_to_watt(megajoules):
+    return megajoules * 277.77
+
+
+def megajoules_to_kilowatt(megajoules):
+    return megajoules / 3.60
+
+
+def megajoules_to_megawatt(megajoules):
+    return megajoules / 3600
+
+
+def megajoules_to_btu(megajoules):
+    return megajoules * 947.81
+
+
+def megajoules_to_kilo_btu(megajoules):
+    return megajoules / 1.055
+
+
+def megajoules_to_joules(megajoules):
+    return megajoules * 1000000
+
+
+def megajoules_to_kilojoules(megajoules):
+    return megajoules * 1000
+
+
+def megajoules_to_gigajoules(megajoules):
+    return megajoules / 1000
+
+
+def gigajoules_to_watt(gigajoules):
+    return gigajoules * 277777.77
+
+
+def gigajoules_to_kilowatt(gigajoules):
+    return gigajoules * 277.77
+
+
+def gigajoules_to_megawatt(gigajoules):
+    return gigajoules / 3.60
+
+
+def gigajoules_to_btu(gigajoules):
+    return gigajoules * 947817.12
+
+
+def gigajoules_to_joules(gigajoules):
+    return gigajoules * 1000000000
+
+
+def gigajoules_to_kilojoules(gigajoules):
+    return gigajoules * 1000000
+
+
+def gigajoules_to_megajoules(gigajoules):
+    return gigajoules * 1000
 
 
 print(coin_toss())
+print(random_color())
+print(random_color2())
 print(is_even_odd(5))
 print(celsius_to_fahrenheit(20))
 print(fahrenheit_to_celsius(67))
@@ -1852,3 +2103,59 @@ print(arcsecond_to_cycle(1))
 print(shorten('ala'))
 print(['ala', 'ola', 'tomek', 'adam'])
 print(check_palindrome('kajak'))
+print(div(10, 15))
+# print(roll())
+print(herz_to_kiloherz(10))
+print(herz_to_hektorez(10))
+print(herz_to_dekaherz(10))
+print(herz_to_decyherz(10))
+print(herz_to_centyherz(10))
+print(herz_to_miliherz(10))
+print(herz_to_microherz(10))
+print(herz_to_nanoherz(10))
+print(herz_to_femtoherz(10))
+print(cm3_to_dm3(30))
+print(cm3_to_ft3(10))
+print(cm3_to_in3(10))
+print(cm3_to_m3(10))
+print(cm3_to_yd3(10))
+print(cm3_to_deciliters(10))
+print(cm3_to_drops(20))
+print(cm3_to_medical_drops(40))
+print(m3_to_km3(1))
+print(m3_to_dc3(1))
+print(m3_to_cm3(1))
+print(m3_to_mm3(1))
+print(m3_to_microm3(1))
+print(m3_to_nanom3(1))
+print(m3_to_liter(1))
+print(m3_to_cu_in(1))
+print(m3_to_cu_ft(1))
+print(m3_to_cu_yd(1))
+print(liter_to_km3(1))
+print(liter_to_m3(1))
+print(liter_to_dm3(1))
+print(liter_to_cm3(1))
+print(liter_to_mm3(1))
+print(liter_to_microm3(1))
+print(kilojoules_to_megawatt(10))
+print(kilojoules_to_btu(10))
+print(kilojoules_to_kilo_btu(10))
+print(kilojoules_to_joules(10))
+print(kilojoules_to_megajoules(10))
+print(kilojoules_to_gigajoules(10))
+print(megajoules_to_watt(10))
+print(megajoules_to_kilowatt(10))
+print(megajoules_to_megawatt(10))
+print(megajoules_to_btu(10))
+print(megajoules_to_kilo_btu(10))
+print(megajoules_to_joules(10))
+print(megajoules_to_kilojoules(10))
+print(megajoules_to_gigajoules(10))
+print(gigajoules_to_watt(10))
+print(gigajoules_to_kilowatt(10))
+print(gigajoules_to_megawatt(10))
+print(gigajoules_to_btu(10))
+print(gigajoules_to_joules(10))
+print(gigajoules_to_kilojoules(10))
+print(gigajoules_to_megajoules(10))
