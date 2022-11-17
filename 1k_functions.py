@@ -3,6 +3,7 @@ import random
 import re
 import statistics
 import string
+import calendar
 from datetime import datetime, timedelta, date
 
 
@@ -1887,34 +1888,426 @@ def appending_to_list(x):
     return temp
 
 
-def removing_from_list(x):
-    temp1 = ['dom', 'dupa']
-    temp1.remove(x)
-    return temp1
+def removing_from_list(list_, x):
+    result = list_.remove(x)
+    return result
 
 
-def popping_list():
-    temp = ['dom', 'auto']
-    temp.pop()
-    return temp
+def popping_list(list_):
+    result = list_.pop()
+    return result
 
 
-def clear_list():
-    temp1 = ['komp', 'dupa']
-    temp1.clear()
-    return temp1
+def clear_list(list_):
+    result = list_.clear()
+    return result
 
 
-def counting_in_list(x):
-    temp = ['komp', 'dupa']
-    y = temp.count(x)
+def counting_in_list(x, list_):
+    y = list_.count(x)
     return y
 
 
-def reversing_list():
-    temp = ['komp', 'dupa']
-    temp.reverse()
-    return temp
+def reversing_list(list_):
+    result = list_.reverse()
+    return result
+
+
+def get_total(costs, items, tax):
+    return round(sum([costs[i] for i in items if i in costs]) * (1 + tax), 2)
+
+
+def check_availability(schedule, current_time):
+    for t in schedule:
+        start, finish = t[0], t[1]
+        if int(start[:2]) <= int(current_time[:2]) <= int(finish[:2]) and int(current_time[3:]) < int(finish[3:]):
+            return t[1]
+    else:
+        return True
+
+
+def create_phone_number(n):
+    return "({}{}{} {}{}{}-{}{}{}{})".format(*n)
+
+
+def duplicate_count(text):
+    text = text.lower()
+    chars = {char: text.count(char) for char in text}
+    return len([char for char in chars if chars[char] >=2 ])
+
+
+def christmas_tree(height):
+    stars = [i for i in range(1, height*2+1, 2)]
+    tree = "\n".join([("*"*star).center(stars[-1]) for star in stars])
+    return tree
+
+
+def duplicate_encode(word):
+    return "".join(["(" if word.lower().count(l)==1 else ")" for l in word.lower()])
+
+
+def find_uniq(arr):
+    for char in set(arr):
+        if arr.count(char) == 1:
+            return char
+
+
+def alphabet_position(text):
+    alp = "abcdefghijklmnopqrstuvwxyz"
+    return " ".join([str(alp.find(c) + 1) for c in text.lower() if c in alp])
+
+
+def is_anagram(test, original):
+    return set(test.lower()) == set(original.lower()) and len(test) == len(original)
+
+
+def in_asc_order(arr):
+    return arr == sorted(arr)
+
+
+def create_dict(keys, values):
+    d = {}
+    for e,i in enumerate(keys):
+        if e < len(values):
+            d[i] = values[e]
+        else:
+            d[i] = None
+    return d
+
+
+def binary_array_to_number(arr):
+    return int("".join([str(i) for i in arr]), 2)
+
+
+def remove_url_anchor(url):
+    return url[:url.find("#")] if "#" in url else url
+
+
+def remove_duplicate_words(s):
+    l = []
+    for word in s.split():
+        if word not in l:
+            l.append(word)
+    return " ".join(l)
+
+
+def remove_smallest(numbers):
+    if len(numbers) < 2:
+        return []
+    else:
+        nums = numbers.copy()
+        nums.remove(min(numbers))
+        return nums
+
+
+def reverse_words(text):
+    return " ".join([word[::-1] for word in text.split(" ")])
+
+
+def str_ends_with(string, ending):
+    return string.endswith(ending)
+
+
+def division(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError:
+        return 'Cannot divide by 0 !!!'
+
+
+def perimeter_of_the_triangle(a, b, c):
+    return a + b + c
+
+
+def perimeter_of_the_square(a):
+    return 4 * a
+
+
+def perimeter_of_the_rectangle(a, b):
+    return (2 * a) + (2 * b)
+
+
+def circle_field(pi=3.14, *, r):
+    return pi * (r ** 2)
+
+
+def perimeter_of_the_trapezoid(a, b, c, d):
+    return a + b + c + d
+
+
+def cuboid_field(a, b, c):
+    return 2 * ((a * b) + (b * c) + (a * c))
+
+
+def convert_netto_to_brutto(value, vat=23):
+    return ((value / 100) * vat) + value
+
+
+def is_divisible_by_2(number):
+    if number % 2 == 0:
+        return True
+    return False
+
+
+def convert_ar_to_meter2(number):
+    return number * 100
+
+
+def convert_hr_to_meter2(number):
+    return number * 10000
+
+
+def convert_hr_to_ar(number):
+    return number * 100
+
+
+def draw_a_number(start, stop):
+    return random.randint(start, stop)
+
+
+def converter_liters_to_us_gallons(liters):
+    return liters * 0.26417
+
+
+def converter_liters_to_us_milliliters(liters):
+    return liters / 0.00100000
+
+
+def converter_liters_to_british_gallons(liters):
+    return liters * 0.21997
+
+
+def converter_liters_to_cubic_meters(liters):
+    return liters / 1000
+
+
+def converter_liters_to_cubic_inches_converter(liters):
+    return liters * 61.024
+
+
+def converter_liters_to_inches_british(liters):
+    return liters * 35.195
+
+
+def converter_liters_to_us_quarts(liters):
+    return liters * 1.0567
+
+
+def converter_liters_to_british_pints(liters):
+    return liters * 1.7598
+
+
+def monthly_calendar(year, month):
+    return calendar.month(year, month)
+
+
+def year_calendar(year):
+    return calendar.calendar(year)
+
+
+def converting_byte_in_kilobyte(b):
+    return b * 1024
+
+
+def converting_kilobyte_to_byte(kb):
+    return kb / 1024
+
+
+def converting_byte_in_megabyte(b):
+    return b * 1048576
+
+
+def converting_megabyte_to_byte(mb):
+    return mb / 1048576
+
+
+def converting_byte_in_gigabyte(b):
+    return b * 1024 * 1024 * 1024
+
+
+def converting_gigabyte_to_kilobyte(gb):
+    return gb / 1024 / 1024 / 1024
+
+
+def converting_byte_in_terabyte(b):
+    return b * 1024 * 1024 * 1024 * 1024
+
+
+def converting_terabyte_to_byte(tb):
+    return tb / 1024 / 1024 / 1024 / 1024
+
+
+def converting_kilobyte_in_megabyte(kb):
+    return kb * 1024
+
+
+def converting_megabyte_to_kilobyte(mb):
+    return mb / 1024
+
+
+def converting_kilobyte_in_gigabyte(kb):
+    return kb * 1024 * 1024
+
+
+def converting_kilobyte_in_terabyte(kb):
+    return kb * 1024 * 1024 * 1024
+
+
+def converting_terabyte_to_kilobyte(b):
+    return b / 1024 / 1024 / 1024
+
+
+def converting_byte_to_bits(b):
+    return b * 8
+
+
+def converting_bits_to_byte(bits):
+    return bits / 8
+
+
+def convert_lumens_to_lux(lumens, meter):
+    return lumens / meter
+
+
+def convert_lux_to_lumens(lux, meter):
+    return lux * meter
+
+
+def convert_lux_to_watts(lux, meter, lumen):
+    return lux * meter / lumen
+
+
+def convert_watts_to_lux(watts, lumen, meter):
+    return watts * lumen / meter
+
+
+def convert_lumens_to_watts(lumen, watts):
+    return lumen / watts
+
+
+def convert_watts_to_lumens(watts, lumen):
+    return lumen * watts
+
+
+def hertz_to_kilohertz_conversion(hertz):
+    return hertz / 1000
+
+
+def hertz_to_megahertz_conversion(hertz):
+    return hertz / 1000000
+
+
+def hertz_to_gigahertz_conversion(hertz):
+    return hertz / 1000000000
+
+
+def hertz_to_terahertz_conversion(hertz):
+    return hertz / (10 ** 12)
+
+
+def hertz_to_radian_sec_conversion(hertz):
+    return 2 * math.pi * hertz
+
+
+def kilohertz_to_hz_conversion_calculator(hertz):
+    return hertz * 1000
+
+
+def kilohertz_to_megahertz_conversion_calculator(hertz):
+    return hertz / 1000
+
+
+def kilohertz_to_gigahertz_conversion_calculator(hertz):
+    return hertz / 1000000
+
+
+def megahertz_to_hertz_conversion_calculator(hertz):
+    return hertz * 1000000
+
+
+def megahertz_to_kilohertz_conversion_calculator(hertz):
+    return hertz * 1000
+
+
+def megahertz_to_gigahertz_conversion_calculator(hertz):
+    return hertz / 1000
+
+
+def gigahertz_to_hertz_conversion_calculator(hertz):
+    return hertz * (1000 ** 9)
+
+
+def gigahertz_to_kilohertz_conversion_calculator(hertz):
+    return hertz * 1000000
+
+
+def gigahertz_to_megahertz_conversion_calculator(hertz):
+    return hertz * 1000
+
+
+def remove_all_spaces(sentence):
+    return sentence.replace(' ', '')
+
+
+def combine_list_elements(my_list):
+    return ''.join(my_list)
+
+
+def print_letters(word):
+    for letter in word:
+        print(letter)
+
+
+def remove_vowels(word):
+    vowels = ['a', 'o', 'e', 'i', 'u']
+    new_word = ''
+
+    for letter in word:
+        if letter not in vowels:
+            new_word += letter
+    return new_word
+
+
+def count_digits_in_integer(number):
+    counter = 0
+
+    while number > 0:
+        counter += 1
+        number = number // 10
+
+    return counter
+
+
+def repeat_word(word, times):
+    return word * times
+
+
+def check_if_value_alphanumeric(word):
+    return word.isalpha()
+
+
+def print_keys(my_dictionary):
+    print(list(my_dictionary.keys()))
+
+
+def add_new_element(my_dictionary, new_element):
+    my_dictionary.update(new_element)
+    return my_dictionary
+
+
+def chessboard(n=8):
+    for i in range(1, n):
+        if i % 2 == 0:
+            for a in range(1, 5):
+                print(" #", end="")
+        else:
+            for a in range(1, 5):
+                print("# ", end="")
+        print(end='\n')
+
+
+
+
 
 
 print(coin_toss())
@@ -2295,10 +2688,10 @@ print(is_space_in_string('     AWS'))
 print(string_is_title('Tadeusz'))
 print(string_is_upper('AMADEUSZ'))
 print(appending_to_list('kasztan'))
-print(removing_from_list('kot'))
-print(popping_list())
-print(clear_list())
-print(counting_in_list('pies'))
+# print(removing_from_list('kot'))
+# print(popping_list())
+# print(clear_list())
+# print(counting_in_list('pies'))
 print(add_two_lists([1, 2, 3], [10, 10, 10]))
 print(get_max_from_list([10, 15, 20]))
 print(get_min_from_list([10, 15, 20]))
@@ -2319,3 +2712,87 @@ print(calculate_future_date(20))
 print(calculate_past_date(20))
 print(get_day_name_for_date(1992, 3, 20))
 print(get_current_time2())
+print(get_total({'socks':5, 'shoes':60, 'sweater':30}, ['shoes', 'jacket'], 23))
+print(check_availability([["09:30", "10:15"], ["12:20", "15:50"]], "11:00"))
+print(create_phone_number([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
+print(duplicate_count('poszła ola do przedszkola'))
+print(christmas_tree(5))
+print(duplicate_encode('dominikana'))
+print(find_uniq([ 1, 1, 1, 2, 1, 1]))
+print(alphabet_position('ala ma kota'))
+print(is_anagram('foefet', 'toffee'))
+print(in_asc_order('hello'))
+print(create_dict(['a', 'b', 'c'], [1, 2, 3]))
+print(binary_array_to_number([0, 1, 1, 0]))
+print(remove_url_anchor('www.onet.pl#sport'))
+print(remove_duplicate_words('ola ala ola'))
+print(remove_smallest([1, 2, 3, 4]))
+print(reverse_words('ala ma kota'))
+print(str_ends_with('katowice', 'ce'))
+print(division(2, 0))
+print(perimeter_of_the_triangle(10, 15, 20))
+print(perimeter_of_the_square(2))
+print(perimeter_of_the_rectangle(10, 15))
+print(circle_field(r=15))
+print(perimeter_of_the_trapezoid(10, 15, 20, 25))
+print(cuboid_field(10, 15, 20))
+print(convert_netto_to_brutto(100))
+print(is_divisible_by_2(10))
+print(convert_ar_to_meter2(5))
+print(convert_hr_to_meter2(1))
+print(convert_hr_to_ar(100))
+print(draw_a_number(10, 15))
+print(converter_liters_to_us_gallons(100))
+print(converter_liters_to_us_milliliters(100))
+print(converter_liters_to_british_gallons(100))
+print(converter_liters_to_cubic_meters(100))
+print(converter_liters_to_cubic_inches_converter(100))
+print(converter_liters_to_inches_british(100))
+print(converter_liters_to_us_quarts(100))
+# print(monthly_calendar(2022, 3))
+# print(year_calendar(2022))
+print(converting_byte_in_kilobyte(100))
+print(converting_kilobyte_to_byte(1024))
+print(converting_byte_in_megabyte(100))
+print(converting_megabyte_to_byte(1000))
+print(converting_byte_in_gigabyte(100))
+print(converting_gigabyte_to_kilobyte(1000))
+print(converting_byte_in_terabyte(1000))
+print(converting_terabyte_to_byte(1000))
+print(converting_kilobyte_in_megabyte(100))
+print(converting_megabyte_to_kilobyte(1000))
+print(converting_kilobyte_in_gigabyte(100))
+print(converting_kilobyte_in_terabyte(1000))
+print(converting_terabyte_to_kilobyte(100))
+print(converting_byte_to_bits(1))
+print(converting_bits_to_byte(1))
+print(convert_lumens_to_lux(500, 4))
+print(convert_lux_to_lumens(500, 4))
+print(convert_lux_to_watts(50, 18, 15))
+print(convert_watts_to_lux(60, 15, 18))
+print(convert_lumens_to_watts(100, 15))
+print(convert_watts_to_lumens(100, 15))
+print(hertz_to_kilohertz_conversion(80))
+print(hertz_to_megahertz_conversion(800))
+print(hertz_to_gigahertz_conversion(80))
+print(hertz_to_terahertz_conversion(80))
+print(hertz_to_radian_sec_conversion(300))
+print(kilohertz_to_hz_conversion_calculator(80))
+print(kilohertz_to_megahertz_conversion_calculator(80))
+print(kilohertz_to_gigahertz_conversion_calculator(80))
+print(megahertz_to_hertz_conversion_calculator(80))
+print(megahertz_to_kilohertz_conversion_calculator(80))
+print(megahertz_to_gigahertz_conversion_calculator(80))
+print(gigahertz_to_hertz_conversion_calculator(80))
+print(gigahertz_to_kilohertz_conversion_calculator(80))
+print(remove_all_spaces('ala ma kota'))
+print(combine_list_elements(['a', 'l', 'a']))
+print_letters('ala ma kota')
+print(remove_vowels('ala ma kota'))
+print(count_digits_in_integer(123456))
+print(repeat_word('ala', 5))
+print(check_if_value_alphanumeric('123456'))
+print_keys({'a': 1, 'b': 2})
+print(add_new_element({'a': 1, 'b': 2}, {'c': 3}))
+chessboard()
+
