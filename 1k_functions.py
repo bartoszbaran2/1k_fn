@@ -2320,6 +2320,426 @@ def decode_morse(morse_code):
     return res.strip()
 
 
+def generate_email_address(name, surname):
+    domen = ['gmail.com', 'interia.pl', 'onet.pl', '02.pl', 'wp.pl']
+    return ".".join([name.lower(), surname.lower()]) + '@' + random.choice(domen)
+
+
+def gigavolts_to_volts(gigavolts):
+    return gigavolts * 10 ** 9
+
+
+def grams_to_kilograms(grams):
+    return grams / 1000
+
+
+def grams_to_milligrams(grams):
+    return grams * 1000
+
+
+def grams_to_ounces(grams):
+    return grams / 28.34952
+
+
+def grams_to_pounds(grams):
+    return grams / 453.59237
+
+
+def kilograms_to_grams(kg):
+    return kg * 1000
+
+
+def kilograms_to_milligrams(kg):
+    return kg * 10000000
+
+
+def kilograms_to_ounces(kg):
+    return kg / 0.02834952
+
+
+def kilograms_to_pounds(kg):
+    return kg / 0.02834952
+
+
+def kilograms_to_tons(kg):
+    return kg / 1000
+
+
+def milligrams_to_grams(mgrams):
+    return mgrams / 1000
+
+
+def milligrams_to_kilograms(mgrams):
+    return mgrams / 1000000
+
+
+def milligrams_to_micrograms(mgrams):
+    return mgrams * 1000000
+
+
+def micrograms_to_milligrams(mgrams):
+    return mgrams / 1000
+
+
+def ounces_to_grams(ounces):
+    return ounces * 28.34952
+
+
+def ounces_to_kilograms(ounces):
+    return ounces * 0.02834952
+
+
+def ounces_to_pounds(ounces):
+    return ounces / 16
+
+
+def pounds_to_grams(pounds):
+    return pounds * 453.59237
+
+
+def pounds_to_kilograms(pounds):
+    return pounds * 0.45359237
+
+
+def pounds_to_ounces(pounds):
+    return pounds * 16
+
+
+def pounds_to_stones(pounds):
+    return pounds / 14
+
+
+def pounds_to_tons(pounds):
+    return pounds * 0.00045359237
+
+
+def stones_to_pounds(stones):
+    return stones * 14
+
+
+def tons_to_kilograms(tons):
+    return tons / 1000
+
+
+def tons_to_pounds(tons):
+    return tons / 0.00045359237
+
+
+def volts_to_microvolts(volts):
+    return volts * 1000000
+
+
+def volts_to_millivolts(volts):
+    return volts * 1000
+
+
+def volts_to_kilovolts(volts):
+    return volts / 1000
+
+
+def volts_to_gigavolts(volts):
+    return volts / 10 ** 9
+
+
+def microvolts_to_volts(mvolts):
+    return mvolts / 10 ** 6
+
+
+def millivolts_to_volts(mmvolts):
+    return mmvolts / 1000
+
+
+def kilovolts_to_volts(kvolts):
+    return kvolts * 1000
+
+
+def megavolts_to_volts(megavolts):
+    return megavolts * 1000000
+
+
+def mach_to_km_h(mach):
+    return mach * 1.22508 * math.pow(10, 3)
+
+
+def mach_to_km_min(mach):
+    return mach * 2.0418 * math.pow(10, 1)
+
+
+def mach_to_km_s(mach):
+    return mach * 3.403 * math.pow(10, -1)
+
+
+def mach_to_m_h(mach):
+    return mach * 1.225083 * math.pow(10, 6)
+
+
+def mach_to_m_min(mach):
+    return mach * 2.0418 * math.pow(10, 4)
+
+
+def mach_to_m_s(mach):
+    return mach * 3.403 * math.pow(10, 2)
+
+
+def mach_to_dm_s(mach):
+    return mach * 3.403 * math.pow(10, 3)
+
+
+def mach_to_cm_s(mach):
+    return mach * 3.403 * math.pow(10, 4)
+
+
+def mach_to_mm_s(mach):
+    return mach * 3.403 * math.pow(10, 5)
+
+
+def mach_to_in_s(mach):
+    return mach * 1.339764 * math.pow(10, 4)
+
+
+def mach_to_mph(mach):
+    return mach * 7.612975 * math.pow(10, 2)
+
+
+def mach_to_kn(mach):
+    return mach * 6.620623 * math.pow(10, 2)
+
+
+def mach_to_speed_of_light(mach):
+    return mach * 1.135119 * math.pow(10, -6)
+
+
+def m_per_sec_to_km_per_h(m_per_second):
+    return m_per_second * 3.6
+
+
+def m_per_sec_to_km_per_min(m_per_second):
+    return m_per_second * 6 * math.pow(10, -2)
+
+
+def m_per_sec_to_km_per_sec(m_per_second):
+    return m_per_second * math.pow(10, -3)
+
+
+def m_per_sec_to_dm_per_sec(m_per_second):
+    return m_per_second * math.pow(10, 1)
+
+
+def m_per_sec_to_cm_per_sec(m_per_second):
+    return m_per_second * math.pow(10, 2)
+
+
+def m_per_sec_to_milimeter_per_sec(m_per_second):
+    return m_per_second * math.pow(10, 3)
+
+
+def m_per_sec_to_in_per_sec(m_per_second):
+    return m_per_second * 3.937008 * math.pow(10, 1)
+
+
+def m_per_sec_to_mile_per_h(m_per_second):
+    return m_per_second * 2.237136
+
+
+def m_per_sec_to_knots(m_per_second):
+    return m_per_second * 1.945525
+
+
+def m_per_sec_to_speed_of_light(m_per_second):
+    return m_per_second * 3.335641 * math.pow(10, -9)
+
+
+def m_per_sec_to_mach(m_per_second):
+    return m_per_second * 2.938584 * math.pow(10, -3)
+
+
+def show_current_time():
+    return datetime.now().strftime('%H:%M:%S')
+
+
+def multiplication(a, b):
+    return a * b
+
+
+def subtraction(a, b):
+    return a / b
+
+
+def exponentiation(a, b):
+    return a**b
+
+
+def modulo(a, b):
+    return a % b
+
+
+def floor_division(a, b):
+    return a // b
+
+
+def month_to_second(m):
+    return m * 30 * 24 * 60 * 60
+
+
+def second_to_month(s):
+    return s / 60 / 60 / 24 / 30
+
+
+def minutes_to_month(m):
+    return m / 60 / 24 / 30
+
+
+def hour_to_month(h):
+    return h / 24 / 30
+
+
+def day_to_month(d):
+    return d / 30
+
+
+def year_to_month(y):
+    return y * 12
+
+
+def year_to_day(y):
+    return y * 12 * 30
+
+
+def year_to_hour(y):
+    return y * 12 * 30 * 24
+
+
+def year_to_minute(y):
+    return y * 12 * 30 * 24 * 60
+
+
+def year_to_second(y):
+    return y * 12 * 30 * 24 * 60 * 60
+
+
+def month_to_year(m):
+    return m / 12
+
+
+def day_to_year(d):
+    return d / 12 / 30
+
+
+def hour_to_year(h):
+    return h / 12 / 30 / 60
+
+
+def minute_to_year(m):
+    return m / 12 / 30 / 60 / 60
+
+
+def second_to_year(s):
+    return s / 12 / 30 / 60 / 60 / 60
+
+
+def week_to_day(w):
+    return w * 7
+
+
+def week_to_hour(w):
+    return w * 7 * 24
+
+
+def week_to_minutes(w):
+    return w * 7 * 24 * 60
+
+
+def week_to_second(w):
+    return w * 7 * 24 * 60 * 60
+
+
+def day_to_week(d):
+    return d / 7
+
+
+def hour_to_week(h):
+    return h / 7 / 24
+
+
+def minute_to_week(m):
+    return m / 7 / 24 / 60
+
+
+def second_to_week(s):
+    return s / 7 / 24 / 60 / 60
+
+
+def knots_to_mpers(speed):
+    return speed * 0.5144444
+
+
+def mperh_to_mpers(speed):
+    return speed * 0.0002777778
+
+
+def mpermin_to_mpers(speed):
+    return speed * 0.01667
+
+
+def mileperh_to_mpers(speed):
+    return speed * 0.44704
+
+
+def mileperm_to_mpers(speed):
+    return speed * 26.8224
+
+
+def milepers_to_mpers(speed):
+    return speed * 1609.344
+
+
+def yardperh_to_mpers(speed):
+    return speed * 0.000254
+
+
+def yardperm_to_mpers(speed):
+    return speed * 0.01524
+
+
+def yardpers_to_mpers(speed):
+    return speed * 0.9144
+
+
+def squareinch_to_squarem(area):
+    return area * 0.00064516
+
+
+def squarefoot_to_squarem(area):
+    return area * 0.09290304
+
+
+def squareyard_to_squarem(area):
+    return area * 0.83612736
+
+
+def squaremile_to_squarem(area):
+    return area * 2589988.11
+
+
+def acre_to_squarem(area):
+    return area * 4046.856
+
+
+def hectare_to_squarem(area):
+    return area * 10000
+
+
+def squaremm_to_squarem(area):
+    return area * 0.000001
+
+
+def squarecm_to_squarem(area):
+    return area * 0.0001
+
+
+def squarekm_to_squarem(area):
+    return area * 1000000
+
 
 
 print(coin_toss())
@@ -2808,6 +3228,112 @@ print_keys({'a': 1, 'b': 2})
 print(add_new_element({'a': 1, 'b': 2}, {'c': 3}))
 chessboard()
 print(decode_morse('.... . -.--   .--- ..- -.. .'))
+print(generate_email_address('adam', 'kowalski'))
+print(gigavolts_to_volts(300))
+print(grams_to_kilograms(300))
+print(grams_to_kilograms(1000))
+print(grams_to_milligrams(1000))
+print(grams_to_ounces(1000))
+print(grams_to_pounds(1000))
+print(kilograms_to_grams(10))
+print(kilograms_to_milligrams(10))
+print(kilograms_to_ounces(10))
+print(kilograms_to_pounds(10))
+print(kilograms_to_tons(10))
+print(milligrams_to_grams(1000))
+print(milligrams_to_kilograms(1000))
+print(milligrams_to_micrograms(10))
+print(micrograms_to_milligrams(10))
+print(ounces_to_grams(10))
+print(ounces_to_kilograms(10))
+print(ounces_to_pounds(10))
+print(pounds_to_grams(10))
+print(pounds_to_kilograms(56))
+print(pounds_to_ounces(10))
+print(pounds_to_stones(10))
+print(pounds_to_tons(1000))
+print(stones_to_pounds(100))
+print(tons_to_kilograms(100))
+print(tons_to_pounds(10))
+print(volts_to_microvolts(10))
+print(volts_to_millivolts(10))
+print(volts_to_kilovolts(100))
+print(volts_to_gigavolts(100))
+print(microvolts_to_volts(100))
+print(millivolts_to_volts(100))
+print(kilovolts_to_volts(100))
+print(megavolts_to_volts(100))
+print(mach_to_km_h(100))
+print(mach_to_km_min(100))
+print(mach_to_km_s(100))
+print(mach_to_m_h(100))
+print(mach_to_m_min(100))
+print(mach_to_m_s(100))
+print(mach_to_dm_s(100))
+print(mach_to_cm_s(100))
+print(mach_to_mm_s(100))
+print(mach_to_in_s(100))
+print(mach_to_mph(100))
+print(mach_to_kn(100))
+print(mach_to_speed_of_light(100))
+print(m_per_sec_to_km_per_h(100))
+print(m_per_sec_to_km_per_min(100))
+print(m_per_sec_to_km_per_sec(100))
+print(m_per_sec_to_dm_per_sec(100))
+print(m_per_sec_to_cm_per_sec(100))
+print(m_per_sec_to_milimeter_per_sec(100))
+print(m_per_sec_to_in_per_sec(100))
+print(m_per_sec_to_mile_per_h(100))
+print(m_per_sec_to_knots(100))
+print(m_per_sec_to_speed_of_light(100))
+print(m_per_sec_to_mach(100))
+print(show_current_time())
+print(multiplication(2, 3))
+print(subtraction(2, 1))
+print(exponentiation(2, 3))
+print(modulo(3, 4))
+print(floor_division(3, 4))
+print(month_to_second(2))
+print(second_to_month(20000))
+print(minutes_to_month(3456))
+print(hour_to_month(345))
+print(day_to_month(45))
+print(year_to_month(2))
+print(year_to_day(2))
+print(year_to_hour(2))
+print(year_to_minute(2))
+print(year_to_second(2))
+print(month_to_year(20))
+print(day_to_year(34455))
+print(hour_to_year(342343))
+print(minute_to_year(32313))
+print(second_to_year(3213213123))
+print(week_to_day(232))
+print(week_to_hour(323))
+print(week_to_minutes(22))
+print(week_to_second(33))
+print(day_to_week(333))
+print(hour_to_week(32323))
+print(minute_to_week(3232323))
+print(second_to_week(3232323))
+print(knots_to_mpers(100))
+print(mperh_to_mpers(100))
+print(mpermin_to_mpers(100))
+print(mileperh_to_mpers(1000))
+print(mileperm_to_mpers(100))
+print(milepers_to_mpers(100))
+print(yardperh_to_mpers(100))
+print(yardperm_to_mpers(100))
+print(yardpers_to_mpers(100))
+print(squareinch_to_squarem(100))
+print(squarefoot_to_squarem(100))
+print(squareyard_to_squarem(100))
+print(squaremile_to_squarem(100))
+print(acre_to_squarem(100))
+print(hectare_to_squarem(100))
+print(squaremm_to_squarem(100))
+print(squarecm_to_squarem(100))
+print(squarekm_to_squarem(100))
 
 
 
