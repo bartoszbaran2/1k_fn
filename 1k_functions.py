@@ -3180,11 +3180,88 @@ def count_occurencies(txt, sign):
     return txt.count(sign)
 
 
-def center_some_string_with_custom_signs(txt, signs, elo):
-    return txt.center(signs, elo)
+def usa_gallon_to_pint(usa_gallon):
+    return usa_gallon * 8
 
 
+def usa_gallon_to_quart(usa_gallon):
+    return usa_gallon * 4
 
+
+def usa_gallon_to_imperial_gallon(usa_gallon):
+    return usa_gallon / 1.2
+
+
+def usa_gallon_to_bushel(usa_gallon):
+    return usa_gallon / 215
+
+
+def usa_gallon_to_barrel(usa_gallon):
+    return usa_gallon / 537
+
+
+def usa_gallon_to_gallon(usa_gallon):
+    return usa_gallon
+
+
+def imperial_gallon_to_pint(imperial_gallon):
+    return imperial_gallon * 10
+
+
+def imperial_gallon_to_quart(imperial_gallon):
+    return imperial_gallon * 5
+
+
+def imperial_gallon_to_usa_gallon(imperial_gallon):
+    return imperial_gallon * 1.2
+
+
+def imperial_gallon_to_bushel(imperial_gallon):
+    return imperial_gallon / 178
+
+
+def imperial_gallon_to_barrel(imperial_gallon):
+    return imperial_gallon / 448
+
+
+def bushel_to_pint(bushel):
+    return bushel * 2150
+
+
+def bushel_to_quart(bushel):
+    return bushel * 1075
+
+
+def bushel_to_usa_gallon(bushel):
+    return bushel * 215
+
+
+def bushel_to_imperial_gallon(bushel):
+    return bushel * 178
+
+
+def bushel_to_barrel(bushel):
+    return bushel / 8
+
+
+def bushel_to_gallon(bushel):
+    return bushel * 215
+
+
+def nano_to_seconds(n):
+    return n / 1000000000
+
+
+def nano_to_minutes(n):
+    return n / 60000000000
+
+
+def nano_to_hours(n):
+    return n / 3600000000000
+
+
+def nano_to_days(n):
+    return n / 86400000000000
 
 
 
@@ -3883,3 +3960,24 @@ print(check_if_alpha('adam'))
 print(check_index('adam', 'a'))
 print(check_if_endswith('adam', 'm'))
 print(count_occurencies('adam', 'a'))
+print(usa_gallon_to_pint(100))
+print(usa_gallon_to_quart(100))
+print(usa_gallon_to_imperial_gallon(100))
+print(usa_gallon_to_bushel(100))
+print(usa_gallon_to_barrel(100))
+print(usa_gallon_to_gallon(100))
+print(imperial_gallon_to_pint(100))
+print(imperial_gallon_to_quart(100))
+print(imperial_gallon_to_usa_gallon(100))
+print(imperial_gallon_to_bushel(100))
+print(imperial_gallon_to_barrel(100))
+print(bushel_to_pint(100))
+print(bushel_to_quart(100))
+print(bushel_to_usa_gallon(100))
+print(bushel_to_imperial_gallon(100))
+print(bushel_to_barrel(100))
+print(bushel_to_gallon(100))
+print(nano_to_days(100))
+print(nano_to_hours(100))
+print(nano_to_minutes(100))
+print(nano_to_seconds(100))
