@@ -3264,6 +3264,26 @@ def nano_to_days(n):
     return n / 86400000000000
 
 
+def delete_item(lista, number):
+    for item in lista:
+        if lista.count(item) > number:
+            lista.remove(item)
+
+    return lista
+
+
+def tranform_to_set(iterable):
+    return set(iterable)
+
+
+def remove_dot(word):
+    result = word.split('.')
+    return ''.join(result)
+
+
+def count_params(*args):
+    count = len(args)
+    return count
 
 
 print(coin_toss())
@@ -3981,3 +4001,8 @@ print(nano_to_days(100))
 print(nano_to_hours(100))
 print(nano_to_minutes(100))
 print(nano_to_seconds(100))
+print(delete_item([1, 2, 3], 2))
+print(tranform_to_set([1, 2, 3]))
+print(remove_dot('adam.malysz'))
+print(count_params(1, 2, 3,))
+print()
