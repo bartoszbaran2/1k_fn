@@ -2741,6 +2741,453 @@ def squarekm_to_squarem(area):
     return area * 1000000
 
 
+def barrel_to_m3(volume):
+    return volume * 0.158987295
+
+
+def bushel_to_m3(volume):
+    return volume * 0.0366872
+
+
+def cord_to_m3(volume):
+    return volume * 3.624556364
+
+
+def ft3_to_m3(volume):
+    return volume * 0.028316847
+
+
+def in3_to_m3(volume):
+    return volume * 1.63871e-05
+
+
+def yd3_to_m3(volume):
+    return volume * 0.764554858
+
+
+def cup_to_m3(volume):
+    return volume * 0.000236588
+
+
+def ounce_to_m3(volume):
+    return volume * 2.95735e-05
+
+
+def gallon_to_m3(volume):
+    return volume * 0.00454609
+
+
+def gill_to_m3(volume):
+    return volume * 0.000118294
+
+
+def ml_to_m3(volume):
+    return volume * 0.000001
+
+
+def make_list(tup):
+    return list(tup)
+
+
+def make_dict(tup):
+    return {key: None for key in tup}
+
+
+def count_signs(tup, sign):
+    return tup.count(sign)
+
+
+def get_methods(tup):
+    return dir(tup)
+
+
+def get_hash(tup):
+    return hash(tup)
+
+
+def get_index_value(tup, value):
+    return tup.index(value)
+
+
+def get_type(tup):
+    return type(tup)
+
+
+def get_num_of_elems(tup):
+    return len(tup)
+
+
+def clear_dict(dict):
+    dict.clear()
+    return dict
+
+
+def copy_dict(dict):
+    new_dict = dict.copy()
+    return new_dict
+
+
+def create_empty_dict(keys):
+    new_dict = dict.fromkeys(keys)
+    return new_dict
+
+
+def create_dict_with_0_vals(keys, values):
+    new_dict = dict.fromkeys(keys, values)
+    return new_dict
+
+
+def create_dict_with_new_values(keys, values):
+    new_dict = dict.fromkeys(keys, values)
+    return new_dict
+
+
+def get_value_from_dict(dict, value):
+    return dict.get(value)
+
+
+def get_dict_items(dict):
+    return dict.items()
+
+
+def get_dict_keys(dict):
+    return dict.keys()
+
+
+def get_dict_values(dict):
+    return dict.values()
+
+
+def pop_item_from_dict(dict, item):
+    dict.pop(item)
+    return dict
+
+
+def pop_last_item(dict):
+    return dict.popitem()
+
+
+def set_default_value(dict, key, value):
+    dict.setdefault(key, value)
+    return dict
+
+
+def update_dict(dict, other_dict):
+    dict.update(other_dict)
+    return dict
+
+
+def make_list_from_keys(dict):
+    return list(dict.keys())
+
+
+def make_list_from_values(dict):
+    return list(dict.values())
+
+
+def make_list_from_items(dict):
+    return list(dict.items())
+
+
+def get_len_of_dict(dict):
+    return len(dict)
+
+
+def add_items_to_dict(dict, key, value):
+    dict[key] = value
+    return dict
+
+
+def get_one_value(dict, key):
+    return dict[key]
+
+
+def change_value(dict, key, value):
+    dict.update({key: value})
+    return dict
+
+
+def delete_key_value(dict, key):
+    del dict[key]
+    return dict
+
+
+def reverse_words_in_string(text):
+    return ' '.join([word[::-1] for word in text.split()])
+
+
+def centimeter_to_yottameter(cm):
+    return cm / 100000000000000000000000000
+
+
+def decimeter_to_yoctometer(deci):
+    return deci * 100000000000000000000000
+
+
+def decimeter_to_zeptometer(deci):
+    return deci * 1000000000000000000000
+
+
+def decimeter_to_attometer(deci):
+    return deci * 100000000000000000
+
+
+def decimeter_to_femtometer(deci):
+    return deci * 100000000000000
+
+
+def decimeter_to_picometer(deci):
+    return deci * 100000000000
+
+
+def decimeter_to_nanometer(deci):
+    return deci * 100000000
+
+
+def decimeter_to_micrometer(deci):
+    return deci * 100000
+
+
+def decimeter_to_millimeter(deci):
+    return deci * 100
+
+
+def decimeter_to_centimeter(deci):
+    return deci * 10
+
+
+def decimeter_to_meter(deci):
+    return deci / 10
+
+
+def decimeter_to_decameter(deci):
+    return deci / 100
+
+
+def decimeter_to_hectometer(deci):
+    return deci / 1000
+
+
+def decimeter_to_kilometer(deci):
+    return deci / 10000
+
+
+def decimeter_to_megameter(deci):
+    return deci / 10000000
+
+
+def decimeter_to_gigameter(deci):
+    return deci / 10000000000
+
+
+def decimeter_to_terameter(deci):
+    return deci / 10000000000000
+
+
+def decimeter_to_petameter(deci):
+    return deci / 10000000000000000
+
+
+def decimeter_to_exameter(deci):
+    return deci / 10000000000000000000
+
+
+def decimeter_to_zettameter(deci):
+    return deci / 10000000000000000000000
+
+
+def decimeter_to_yottameter(deci):
+    return deci / 10000000000000000000000000
+
+
+def pln_to_THB(pln):
+    return pln / 0.12
+
+
+def pln_to_USD(pln):
+    return pln / 4.73
+
+
+def pln_to_EUR(pln):
+    return pln / 4.70
+
+
+def pln_to_JPY(pln):
+    return pln / 3.18
+
+
+def pln_to_CZK(pln):
+    return pln / 0.19
+
+
+def pln_to_NOK(pln):
+    return pln / 0.45
+
+
+def pln_to_TRY(pln):
+    return pln / 0.25
+
+
+def pln_to_PHP(pln):
+    return pln / 0.08
+
+
+def pln_to_RON(pln):
+    return pln / 0.96
+
+
+def pln_to_UAH(pln):
+    return pln / 0.12
+
+
+def absolute_value_of_number(num):
+    return abs(num)
+
+
+def array_of_bytes(arr):
+    return bytearray(arr)
+
+
+def concatenate(first_name, last_name):
+    return first_name + last_name
+
+
+def make_upper_case(first_name, last_name):
+    return (first_name + last_name).upper()
+
+
+def make_lower_case(first_name, last_name):
+    return (first_name + last_name).lower()
+
+
+def get_initials_upper_case(first_name, last_name):
+    return (first_name[0] + last_name[0]).upper()
+
+
+def get_initials_lower_case(first_name, last_name):
+    return (first_name[0] + last_name[0]).lower()
+
+
+def get_full_name(first_name, last_name):
+    return " ".join([first_name.capitalize(), last_name.capitalize()])
+
+
+def get_full_name_upper(first_name, last_name):
+    return " ".join([first_name.upper(), last_name.upper()])
+
+
+def get_full_name_lower(first_name, last_name):
+    return " ".join([first_name.lower(), last_name.lower()])
+
+
+def create_email(first_name, last_name):
+    return ".".join([first_name.lower(), last_name.lower()]) + '@email.com'
+
+
+def create_short_email(first_name, last_name):
+    return ".".join([first_name[0].lower(), last_name.lower()]) + '@email.com'
+
+
+def fill_name_to_10_chars(last_name):
+    return last_name.zfill(10)
+
+
+def create_email_10_chars(first_name, last_name):
+    return ".".join([first_name.lower(), last_name.lower()]).zfill(10) + '@email.com'
+
+
+def strip_inputs(first_name, last_name):
+    return first_name.strip(), last_name.strip()
+
+
+def check_if_starts_with_letter(first_name, letter):
+    return first_name.startswith(letter)
+
+
+def check_if_ends_with_letter(first_name, letter):
+    return first_name.endswith(letter)
+
+
+def split_txt_space(txt):
+    return txt.split()
+
+
+def partition_txt(txt, match):
+    return txt.partition(match)
+
+
+def find_a(txt, sign):
+    return (txt).find(sign)
+
+
+def rfind_a(txt, sign):
+    return (txt).rfind(sign)
+
+
+def join_items_with_space(txt1, txt2):
+    return " ".join([txt1, txt2])
+
+
+def join_items_with_nextline(txt1, txt2):
+    return "\n".join([txt1, txt2])
+
+
+def check_if_txt_upper(txt1):
+    return txt1.isupper()
+
+
+def check_if_txt_capitalized(txt):
+    return txt.istitle()
+
+
+def check_if_all_are_numeric(txt):
+    return txt.isnumeric()
+
+
+def check_if_txt_lower(txt):
+    return txt.islower()
+
+
+def check_if_identifier(txt):
+    return txt.isidentifier()
+
+
+def check_if_txt_digits(txt):
+    return txt.isdigit()
+
+
+def check_if_all_decimals(txt):
+    return txt.isdecimal()
+
+
+def check_if_ascii(txt):
+    return txt.isascii()
+
+
+def check_if_alpha(txt):
+    return txt.isalpha()
+
+
+def check_index(txt, sign):
+    return txt.index(sign)
+
+
+def check_if_endswith(txt, value):
+    return txt.endswith(value)
+
+
+def count_occurencies(txt, sign):
+    return txt.count(sign)
+
+
+def center_some_string_with_custom_signs(txt, signs, elo):
+    return txt.center(signs, elo)
+
+
+
+
+
+
 
 print(coin_toss())
 print(random_color())
@@ -3334,7 +3781,105 @@ print(hectare_to_squarem(100))
 print(squaremm_to_squarem(100))
 print(squarecm_to_squarem(100))
 print(squarekm_to_squarem(100))
-
-
-
-
+print(barrel_to_m3(100))
+print(bushel_to_m3(1000))
+print(cord_to_m3(100))
+print(ft3_to_m3(100))
+print(in3_to_m3(100))
+print(yd3_to_m3(100))
+print(cup_to_m3(100))
+print(ounce_to_m3(100))
+print(gallon_to_m3(100))
+print(gill_to_m3(1000))
+print(ml_to_m3(100))
+print(make_list((1, 2, 3)))
+print(make_dict((1, 2, 3)))
+# print(count_signs((1, 2, 3)))
+print(get_methods((1, 2, 3)))
+print(get_index_value((1, 2, 3), 1))
+print(get_type((1, 2, 3)))
+print(get_num_of_elems((1, 2, 3)))
+dict_example = {'name': 'Adam', 'age': 15, 'city': 'warszawa'}
+print(clear_dict(dict_example))
+print(copy_dict(dict_example))
+print(create_empty_dict(dict_example))
+print(create_dict_with_0_vals('text', 'elo'))
+print(create_dict_with_new_values('name', 'ola'))
+print(get_value_from_dict({'name': 'Adam', 'age': 15, 'city': 'warszawa'}, 'name'))
+print(get_dict_items({'name': 'Adam', 'age': 15, 'city': 'warszawa'}))
+print(get_dict_keys({'name': 'Adam', 'age': 15, 'city': 'warszawa'}))
+print(get_dict_values({'name': 'Adam', 'age': 15, 'city': 'warszawa'}))
+print(pop_item_from_dict({'name': 'Adam', 'age': 15, 'city': 'warszawa'}, 'name'))
+print(pop_last_item({'name': 'Adam', 'age': 15, 'city': 'warszawa'}))
+print(set_default_value({'name': 'Adam', 'age': 15, 'city': 'warszawa'}, 'hobby', 'tennis'))
+print(update_dict({'name': 'Adam', 'age': 15, 'city': 'warszawa'}, {'hobby': 'tennis'}))
+print(make_list_from_keys({'name': 'Adam', 'age': 15, 'city': 'warszawa'}))
+print(make_list_from_values({'name': 'Adam', 'age': 15, 'city': 'warszawa'}))
+print(make_list_from_items({'name': 'Adam', 'age': 15, 'city': 'warszawa'}))
+print(get_len_of_dict({'name': 'Adam', 'age': 15, 'city': 'warszawa'}))
+print(change_value({'name': 'Adam', 'age': 15, 'city': 'warszawa'}, 'name', 'tomasz'))
+print(delete_key_value({'name': 'Adam', 'age': 15, 'city': 'warszawa'}, 'name'))
+print(reverse_words_in_string('ala ma kota'))
+print(centimeter_to_yottameter(100))
+print(decimeter_to_yoctometer(100))
+print(decimeter_to_zeptometer(100))
+print(decimeter_to_attometer(100))
+print(decimeter_to_femtometer(100))
+print(decimeter_to_picometer(100))
+print(decimeter_to_nanometer(100))
+print(decimeter_to_micrometer(100))
+print(decimeter_to_centimeter(100))
+print(decimeter_to_meter(100))
+print(decimeter_to_decameter(100))
+print(decimeter_to_hectometer(100))
+print(decimeter_to_kilometer(100))
+print(decimeter_to_megameter(100))
+print(decimeter_to_gigameter(100))
+print(decimeter_to_terameter(100))
+print(decimeter_to_exameter(100))
+print(decimeter_to_zettameter(100))
+print(decimeter_to_yottameter(100))
+print(pln_to_THB(100))
+print(pln_to_USD(100))
+print(pln_to_EUR(100))
+print(pln_to_JPY(100))
+print(pln_to_CZK(100))
+print(pln_to_NOK(100))
+print(pln_to_TRY(100))
+print(pln_to_PHP(100))
+print(pln_to_RON(100))
+print(pln_to_UAH(100))
+print(absolute_value_of_number(-122))
+print(array_of_bytes([1, 2, 3]))
+print(concatenate('adam', 'małysz'))
+print(make_upper_case('adam', 'małysz'))
+# print(make_lower_case('Adam', 'Małysz'))
+print(get_initials_upper_case('adam', 'małysz'))
+print(get_initials_lower_case('Adam', 'Małysz'))
+print(get_full_name('adam', 'małysz'))
+print(get_full_name_lower('Adam', 'Małysz'))
+print(get_full_name_upper('adam', 'małysz'))
+print(create_email('adam', 'małysz'))
+print(create_short_email('adam', 'małysz'))
+print(fill_name_to_10_chars('małysz'))
+print(create_email_10_chars('adam', 'małysz'))
+print(strip_inputs('adam', 'małysz'))
+print(check_if_starts_with_letter('adam', 'a'))
+print(check_if_endswith('malysz', 'm'))
+print(split_txt_space('adam'))
+print(partition_txt('adam małysz', 'adam'))
+print(find_a('adam', 'm'))
+print(rfind_a('adam', 'm'))
+print(join_items_with_space('adam', 'małysz'))
+print(join_items_with_nextline('adam', 'małysz'))
+print(check_if_txt_upper('Adam'))
+print(check_if_txt_capitalized('Adam'))
+print(check_if_all_are_numeric('5tt'))
+print(check_if_txt_lower('adam'))
+print(check_if_identifier('adam'))
+print(check_if_txt_digits('adam'))
+print(check_if_ascii('adam'))
+print(check_if_alpha('adam'))
+print(check_index('adam', 'a'))
+print(check_if_endswith('adam', 'm'))
+print(count_occurencies('adam', 'a'))
